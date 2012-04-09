@@ -6,19 +6,42 @@
 Welcome to SciELO Web site for Windows's documentation!
 =======================================================
 
-Contents:
+
+REQUIREMENTS
+------------
+- Windows
+- Apache 2.2.22
+- PHP 5.2.14
+
+Installation of SciELO Website
+------------------------------
 
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
 
-   howtoinstall.rst
-   howtogerapadrao.rst
+    howtoinstall_scielowebwin.rst
 
 
-Indices and tables
-==================
+Configuration of the processing
+-------------------------------
+.. toctree::
+    :maxdepth: 3
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+    howtoconfigure.rst
+
+Generating the website 
+----------------------
+
+.. toctree::
+    :maxdepth: 2
+
+    howtogerapadrao.rst
+
+.. toctree::
+    :maxdepth: 2
+
+Support
+-------
+
+How to get `support <http://docs.scielo.org/en/latest/index.html#support>`_.    
 
