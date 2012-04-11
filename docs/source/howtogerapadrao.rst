@@ -89,10 +89,8 @@ Checking the result and log file
 
 Processing output is displayed on the screen (standard output) and is stored in the log file: \\scielo\\web\\log\\GeraPadrao.log or the file informed in GeraPadrao.
 
-In case of error, processing stops at once, until there is intervention by the user 
-who should read carefully the messages displayed on the screen to decide which 
-action to take according to the options available. 
-
+In case of error, processing stops, and wait for an user's intervention.
+ 
 Example: 
     Cancel or Continue 
 
@@ -111,8 +109,13 @@ Check if the errors are about content, which must be fixed, using SciELO PC Prog
 Check if the errors are about the website application or processing.
 
 
-Preparing the test or public website 
-====================================
+Preparing the data to the processing server
+===========================================
+
+Checking scilsta.txt
+--------------------
+
+#. Check the existence of scilista.txt and its content, it means, list of the journal issues to add/remove/update.
 
 Checking images, translations and PDF files
 -------------------------------------------
@@ -128,62 +131,15 @@ Checking images, translations and PDF files
 #. Check the existence of the translation files of the articles in \\scielo\\web\\bases\\translation\\<acronym>\\<vol-num>\\
 
 
+Transfering files to the processing server
+------------------------------------------
 
+Transfering databases
+`````````````````````
+This procedure sends the databases from local server to the processing server by FTP.
 
-Sending files to a server with FTP. 
-If it is Windows with no FTP service, read Copy of files 
-Copying files 
-============.
+From \\scielo\\web\\proc, run EnviaBasesScieloPadrao.bat, which must be previously configured. 
 
-When a journal is to be included, the files plogo.gif and glogo.gif should be copied 
-to the structure 
-\\htdocs\\img\\revistas\\<acronym>\\ 
-and also.htm* files of secondary pages to 
-\\htdocs\\revistas\\<acronym>\\ 
-for each journal being processed, image directories of the issue should be copied 
-\\htdocs\\img\\revistas\\<acronym>\\<vol-num>\\ 
-and also PDF files of the bases area (default) to 
-\\bases\\pdf\\<acronym>\\<vol-num>\\ 
-for each journal being processed, the directories below 
-\\scielo\\serial para \\scielo\\web\\serial 
-should be copied 
-
-Sending files to a server with FTP 
-=================================.
-
-Preferably, work should be done with other two more servers. One for testing, and 
-one for the public. 
-If the configuration is for just one server, then the server or test and public site 
-mean the same. 
-Here, the transfer of journal files from the local website to the test server is carried out 
-and the files below are executed: 
-
-Sending bases 
-____________˜
-This procedure sends the bases to the test site server where GeraSciELO.bat is run 
-to create the site. 
-To be executed, this procedure is transferred by FTP: 
-- file scilista.txt to the serial directory in the server; and 
-Thus, we should guarantee that scilista.txt contains all the issues to be included in 
-the test site. 
-
-EnviaBasesSciELO.bat, with the following parameter: 
-Parameter 1: path to production area 
-Parameter 2: FTP logfile 
-Parameter 3: logfile (log) 
-Parameter 4: creates / adds (in/to the log) 
-Example: 
-    EnviaBasesScielo.bat \\scielo transf\\EnviaBases2Teste.txt log\\20011002.log cria
-
- 
-Parameter 2 in this procedure refers to the FTP logon file which should be set up 
-with the information from the server, preferably soon after installation of the 
-SciELO Web. The content of this file is comprises the following: 
-server IP 
-user and FTP password 
-directory containing the databases of each issue (equivalent to serial) 
-The shortcut for this procedure uses logon file transf\\EnviaBasesLogOn.txt with 
-the following syntax: 
     EnviaBasesSciELOPadrao.bat 
 
 
@@ -193,8 +149,8 @@ used by EnviaBasesScieloPadrao.bat is found in
 \\scielo\\web\\proc\\transf with the name 
 EnviaBasesLogOn-Example.txt. 
 
-Sending images and pdf 
-______________________
+Transfering img and pdf
+`````````````````````
 
 This procedure transfers the images and pdfs of journal articles listed in the file 
 scilista.txt. 
