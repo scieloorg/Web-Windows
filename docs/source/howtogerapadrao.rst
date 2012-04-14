@@ -66,7 +66,6 @@ How to generate the content for the website
 
 #. Answer: continue or cancel
 
-    .. image:: img/en/gerapadrao_answer.png
 
 #. If continue, edit \\scielo\\serial\\scilista.txt with the following format: 
 
@@ -76,7 +75,21 @@ How to generate the content for the website
         <journal_acronym> v*n*
 
 
-    .. image:: img/en/gerapadrao_scilista.png
+Example:
+
+    .. code-block:: text
+
+        bjmbr v31n1pr
+        bjmbr v31n1
+        jbc 2011naheadpr
+        jbc 2011nahead
+        jbc v115n1
+        jbca n100
+        rv v10s1
+        ra v10n10s1
+        rs v11n1s0
+        jed vserIIn10
+
 
 #. Save and close this file
 #. Enter to continue
@@ -140,37 +153,34 @@ This procedure sends the databases from local server to the processing server by
 
 From \\scielo\\web\\proc, run EnviaBasesScieloPadrao.bat, which must be previously configured. 
 
-    EnviaBasesSciELOPadrao.bat 
+    .. code-block:: text
 
+        EnviaBasesSciELOPadrao.bat 
 
-Remember to configure the logon file used for 
-this procedure before executing. The example 
-used by EnviaBasesScieloPadrao.bat is found in 
-\\scielo\\web\\proc\\transf with the name 
-EnviaBasesLogOn-Example.txt. 
 
 Transfering img and pdf
-`````````````````````
+```````````````````````
 
-This procedure transfers the images and pdfs of journal articles listed in the file 
-scilista.txt. 
-This procedure makes available images and pdfs. It has nothing to do with creating 
-the site, but with viewing articles images and pdfs. 
-EnviaImgPdfSciELO.bat with the following Parameter: 
-- Parameter 1: path to production area 
-- Parameter 2: FTP logon file 
-- Parameter 3: logfile (log) 
-- Parameter 4: creates / adds (in/to log) 
-- Parameter 5: path to server test area 
+This procedure transfers by FTP, from the local server to the homologation server, the images and pdfs of the articles of the journal issues listed in scilista.txt file. 
 
-Example: 
-   EnviaImgPdfScielo.bat \\scielo transf\\EnviaImgPdfLogOn.txt log\\20011002.log cria \\scielo\\web\\htdocs 
+This procedure makes available images and pdfs. It is not related to the generation of the website.
 
-The command EnviaImgPdfSciELO.bat is similar to EnviaBasesSciELO.bat with the 
-addition of Parameter 5. 
+But if the images and pdf files are missing at the website, probably something went wrong at this step.
 
-The shortcut for this procedure is: 
-    EnviaImgPdfSciELOPadrao.bat 
-The example used by EnviaImgPdfScieloPadrao.bat can be found in 
-\\scielo\\web\\proc\\transf with the name EnviaImgPdfLogOn-Example.txt. 
+    .. code-block:: text
 
+        EnviaImgPdfSciELOPadrao.bat 
+
+
+Transfering translations files
+``````````````````````````````
+
+This procedure transfers by FTP, from the local server to the homologation server, the translation files of the articles of the journal issues listed in scilista.txt file. 
+
+This procedure makes available HTML of translations files. It is not related to the generation of the website.
+
+But if the translations files are missing at the website, probably something went wrong at this step.
+
+    .. code-block:: text
+
+        EnviaTranslationSciELOPadrao.bat 
