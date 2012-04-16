@@ -13,6 +13,11 @@ REQUIREMENTS
 - Apache 2.2.22
 - PHP 5.2.14
 
+- CISIS and WISIS: Choose one of the versions avaible, but for both you have to choose the same version.
+    - CISIS: http://bvsmodelo.bvsalud.org/php/level.php?lang=en&component=31&item=1
+    - WISIS: http://bvsmodelo.bvsalud.org/php/level.php?lang=en&component=31&item=2
+
+
 Installation of SciELO Website
 ------------------------------
 
