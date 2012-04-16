@@ -113,10 +113,10 @@ EnviaBasesScieloPadrao.bat
 EnviaBasesScieloPadrao.bat is a shortcut to EnviaBasesScielo.bat.
 
 EnviaBasesSciELOPadrao.bat, with the following parameter:
-Parameter 1: path to production area
-Parameter 2: FTP logfile (see the file mentioned above)
-Parameter 3: logfile (log)
-Parameter 4: cria (optional)  
+    - Parameter 1: path to production area
+    - Parameter 2: FTP logfile (see the file mentioned above)
+    - Parameter 3: logfile (log)
+    - Parameter 4: cria (optional)  
 
 Example:
     
