@@ -7,52 +7,17 @@ Welcome to SciELO Web site for Windows's documentation!
 =======================================================
 
 
-REQUIREMENTS
-------------
-- Windows
-- Apache 2.2.22
-- PHP 5.2.14
-- CISIS and WISIS
-
-
-Installation of CISIS and WISIS
--------------------------------
-Choose one of the versions available, but for both you have to choose the same version.
-    - CISIS
-         - download link: http://bvsmodelo.bvsalud.org/php/level.php?lang=en&component=31&item=1 
-         - install in \\scielo\\web\\proc\\cisis\\
-    - WISIS
-         - download link: http://bvsmodelo.bvsalud.org/php/level.php?lang=en&component=31&item=2
-         - install in \\scielo\\web\\cgi-bin\\
-
-
-
-Installation of SciELO Website
-------------------------------
-
-.. toctree::
-    :maxdepth: 2
-
-    howtoinstall_scielowebwin.rst
-
-
-Configuration of the processing
--------------------------------
 .. toctree::
     :maxdepth: 3
 
+    requirements.rst
+
+    howtoinstall_scielowebwin.rst
+
     howtoconfigure.rst
 
-Generating the website 
-----------------------
-
-.. toctree::
-    :maxdepth: 2
-
     howtogerapadrao.rst
-
-.. toctree::
-    :maxdepth: 2
+    howtoenvia.rst
 
 Support
 -------

@@ -1,14 +1,17 @@
+=====================================
+Configuration of GeraPadrao and Envia
+=====================================
 
-Processing scripts
-==================
+Scripts
+=======
 
     - GeraPadrao.bat and GeraScielo.bat
     - EnviaBasesScieloPadrao.bat and EnviaBasesScielo.bat
     - EnviaImgPdfScieloPadrao.bat and EnviaImgPdfScielo.bat
     - EnviaTranslationScieloPadrao.bat and EnviaTranslationScielo.bat
 
-Configuration of Processing to generate the website
-===================================================
+Configuration of GeraPadrao.bat
+===============================
 
 Edit \\scielo\\web\\proc\\GeraPadrao.bat.
 GeraPadrao.bat is a short cut to GeraScielo.bat.
@@ -36,13 +39,42 @@ GeraScielo.bat
 
 
 
-Configuration of Transfering Img, PDF, translations
-===================================================
+Configuration for EnviaImgPdfScieloPadrao.bat and EnviaTranslationScieloPadrao.bat
+==================================================================================
 
 EnviaImgPdfLogOn.txt and EnviaTranslationLogOn.txt
 --------------------------------------------------
 
 Templates: EnviaImgPdfLogOn-exemplo.txt and EnviaTranslationLogOn-exemplo.txt
+
+It depends on what is used to do the transference: ftp or cygwin\lftp.
+
+Check the Envia*Scielo.bat.
+
+
+    .. code-block:: text
+    
+        ftp -s:temp\Envia...
+
+Or
+    .. code-block:: text
+
+        cgywin\lftp\lftp.exe -f temp\Envia...
+
+
+Using ftp command
+`````````````````
+    .. code-block:: text
+
+        open <SERVER_ADDRESS_OR_NAME>
+        <USER>
+        <PASSWORD>
+        cd <PROC_PATH>
+        prompt
+        bin
+
+Using cygwin\lftp package
+`````````````````````````
 
     .. code-block:: text
 
@@ -90,14 +122,44 @@ Example:
 
 
 
-Configuration of transfering databases
-======================================
+Configuration for EnviaBasesScieloPadrao.bat
+============================================
 
 EnviaBasesLogOn.txt 
 -------------------
 
 Template: EnviaBasesLogOn-exemplo.txt
 
+It depends on what is used to do the transference: ftp or cygwin\lftp.
+
+Check the Envia*Scielo.bat.
+
+
+    .. code-block:: text
+
+        ftp -s:temp\Envia...
+
+Or
+    .. code-block:: text
+
+        cgywin\lftp\lftp.exe -f temp\Envia...
+
+
+Using ftp command
+`````````````````
+    .. code-block:: text
+
+        open <SERVER_ADDRESS_OR_NAME>
+        <USER>
+        <PASSWORD>
+        prompt
+        cd <SERIAL_PATH>
+        ascii
+        put temp\scilista-envia.lst -o scilista.lst
+        bin
+
+Using cgywin\lftp package
+`````````````````````````
     .. code-block:: text
 
         open <USER>:<PASSWORD>@<SERVER_ADDRESS_OR_NAME>
