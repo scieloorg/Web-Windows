@@ -19,8 +19,14 @@ Welcome to SciELO Web site for Windows's documentation!
     howtogerapadrao.rst
     howtoenvia.rst
 
+
 Support
 -------
+
+.. toctree::
+    :maxdepth: 3
+
+    solutions.rst
 
 How to get `support <http://docs.scielo.org/en/latest/index.html#support>`_.    
 

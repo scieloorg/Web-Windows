@@ -17,7 +17,8 @@ Installation
     The default is c:\\scielo\\web.
     The example uses c:\\scielo_br.
 
-    e. g.: c:\\scielo_br
+#. Extract zip file of SciELO Web for Linux package
+#. Extract zip file of SciELO Web for Windows package, overwriting the Linux installation.
 
 
 Extract the zip file of SciELO Site for Linux
@@ -60,6 +61,7 @@ Extract the zip file of SciELO Site for Windows
 
 
     .. image:: img/en/scielo027.png
+
 
 Configuration of the virtual host
 =================================
@@ -270,57 +272,16 @@ Save the file.
 
     .. image:: img/en/scielo057.png
 
+Testing the installation
+------------------------
 
-Errors or Warnings
-==================
-
-Error 1
--------
-
-As accessing http://teste.scielo.local, the website present unexpected presentation.
-
-Edit the php.ini file.  
-
-    .. image:: img/en/scielo063.png
-
-This file is located on PHP standard directory.
-
-    .. image:: img/en/scielo064.png
-
-Open this file, using WordPad or Notepad, then search for short_open_tag
-
-    .. image:: img/en/scielo065.png
+Before testing, be sure there are the databases generated.
 
 
-    .. image:: img/en/scielo066.png
-
-Change short_open_tag = Off to short_open_tag = On
-
-    .. image:: img/en/scielo067.png
-
-Save the file
-
-    .. image:: img/en/scielo068.png
-
-Restart Apache.
-
-    .. image:: img/en/scielo069.png
-
-Open http://teste.scielo.local.
-
-    .. image:: img/en/scielo070.png
-
-Error 2
--------
-
-Access http://teste.scielo.local
-
-Click on Alphabetic list link
-
-    .. image:: img/en/scielo071.png
-
-This error is related to missing databases, which can be gotten from SciELO developers team.
-
-    .. image:: img/en/scielo072.png
-
+========
+Updating
+========
+Execute the same steps used for installation:
+#. Download
+#. Installation (extraction of Linux and Windows packages)
 
