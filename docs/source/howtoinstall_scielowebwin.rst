@@ -5,8 +5,8 @@ Installation of SciELO Website
 Download
 =========
 
-#. Link to download Linux   ZIP file: https://github.com/scieloorg/Web/zipball/master
-#. Link to download Windows ZIP file: https://github.com/scieloorg/Web-Windows/zipball/master
+#. Link of versions available for SciELO Site: https://github.com/scieloorg/Web/tags
+#. Link of versions available for Windows Patch: https://github.com/scieloorg/Web-Windows/tags
 
 NOTE: Both must be extracted to the same path.
 
