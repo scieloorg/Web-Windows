@@ -23,5 +23,5 @@ echo Tecle CONTROL-C para sair ou ENTER para continuar...
 
 pause > nul
 
-EnviaBasesScielo.bat \scielo transf\EnviaBasesLogOn.txt log\EnviaBasesScieloPadrao.log cria 1
+EnviaBasesScielo.bat \scielo transf\EnviaBasesLogOn.txt log\EnviaBasesScieloPadrao.log cria 
 
