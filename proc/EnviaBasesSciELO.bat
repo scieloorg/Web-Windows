@@ -35,8 +35,8 @@ if errorlevel==1 batch\AchouErro.bat %0 mx criacao temp\EnviaBases.txt
 echo bye >> temp\EnviaBases.txt
 
 call batch\InformaLog.bat %0 x FTP das bases
-rem ftp -s:temp\EnviaBases.txt >> %INFORMALOG%
-..\cygwin\lftp\lftp.exe -f temp\EnviaBases.txt >> %INFORMALOG% 2>&1
+ftp -s:temp\EnviaBases.txt >> %INFORMALOG%
+rem ..\cygwin\lftp\lftp.exe -f temp\EnviaBases.txt >> %INFORMALOG% 2>&1
 if errorlevel==1 batch\AchouErro.bat %0 ftp: temp\EnviaBases.txt
 
 call batch\InformaLog.bat %0 dh ===Fim=== LOG gravado em: %INFORMALOG%
