@@ -1,6 +1,6 @@
-=====================================
-Configuration of GeraPadrao and Envia
-=====================================
+=============================================
+Configuration of GeraPadrao and Envia2Medline
+=============================================
 
 Scripts
 =======
@@ -10,10 +10,11 @@ Scripts
     - EnviaImgPdfScieloPadrao.bat and EnviaImgPdfScielo.bat
     - EnviaTranslationScieloPadrao.bat and EnviaTranslationScielo.bat
 
-Configuration of GeraPadrao.bat
-===============================
+Configuring GeraPadrao.bat
+==========================
 
-Edit \\scielo\\web\\proc\\GeraPadrao.bat.
+Edit c:\\var\\www\\scielo\\proc\\GeraPadrao.bat
+
 GeraPadrao.bat is a short cut to GeraScielo.bat.
 
 Edit GeraPadrao.bat to set the parameters for GeraScielo.bat.
@@ -37,9 +38,15 @@ GeraScielo.bat
 
         [cria] is an optional parameter. Writing cria, the current log file is deleted and a new one is created.
 
+    considering the path \\var\\www\\scielo the changes must be:
+
+    .. code-block:: text
+
+        GeraScielo \\var\\www\\scielo \\var\\www\\scielo log\GeraPadrao.log adiciona
 
 
-Configuration for EnviaImgPdfScieloPadrao.bat and EnviaTranslationScieloPadrao.bat
+
+Configuring EnviaImgPdfScieloPadrao.bat and EnviaTranslationScieloPadrao.bat
 ==================================================================================
 
 EnviaImgPdfLogOn.txt and EnviaTranslationLogOn.txt
@@ -99,7 +106,7 @@ Example:
 
     .. code-block:: text
 
-        EnviaImgPdfScielo.bat \\scielo transf\\EnviaImgPdfLogOn.txt log\\20011002.log cria \\scielo\\web\\htdocs
+        EnviaImgPdfScielo.bat \\var\\www\\scielo transf\\EnviaImgPdfLogOn.txt log\\20011002.log cria \\var\\www\\scielo\\htdocs
 
 
 EnviaTranslationScieloPadrao.bat
@@ -118,7 +125,7 @@ Example:
 
     .. code-block::text
 
-        EnviaTranslationSciELO.bat \\scielo transf\\EnviaTranslationSciELOLogOn.txt log\\20011002.log cria \\scielo\\web\\htdocs
+        EnviaTranslationSciELO.bat \\var\\www\\scielo transf\\EnviaTranslationSciELOLogOn.txt log\\20011002.log cria \\var\\www\\scielo\\htdocs
 
 
 
@@ -184,6 +191,6 @@ Example:
     
     .. code-block:: text
                                    
-        EnviaBasesScielo.bat \\scielo transf\\EnviaBasesLogOn.txt log\\20011002.log cria
+        EnviaBasesScielo.bat \\var\\www\\scielo transf\\EnviaBasesLogOn.txt log\\20011002.log cria
 
 

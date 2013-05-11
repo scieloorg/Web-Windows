@@ -5,7 +5,7 @@ How to generate the content for the website
 Introduction
 ============
 
-The next step after converting the articles is to generate the local website (http://localhost), which will present and search information inserted in the database.
+The next step after converting the articles is to generate the local website (http://scielo.local), which will present and search information inserted in the database.
 
 
 Conventions
@@ -14,24 +14,24 @@ Conventions
 All the examples in this topic show the directory structure for the standard 
 installation of the SciELO website: 
 
-* \\scielo\\serial (*) 
+* \\var\\www\\scielo\\serial (*) 
 
-* \\scielo\\web\\bases 
-* \\scielo\\web\\bases-work 
-* \\scielo\\web\\cgi-bin 
-* \\scielo\\web\\htdocs 
-* \\scielo\\web\\proc 
+* \\var\\www\\scielo\\bases 
+* \\var\\www\\scielo\\bases-work 
+* \\var\\www\\scielo\\cgi-bin 
+* \\var\\www\\scielo\\htdocs 
+* \\var\\www\\scielo\\proc 
 
 (*) data structure required for `SciELO PC Programs </projects/scielo-pc-programs/en/latest/>`_.  
 
 Requirements
 ============
 
-#. images of the articles must be in: \\scielo\\web\\htdocs\\img\\revistas\\<acronym>\\v*n*
-#. pdf files of the articles must be in: \\scielo\\web\\bases\\pdf\\<acronym>\\v*n*
-#. translations files of the articles must be in: \\scielo\\web\\bases\\translations\\<acronym>\\v*n*
-#. database of the articles, created by Converter, must be in: \\scielo\\serial\\<acronym>\\v*n*\base
-#. title and issue database must be in: \\scielo\\serial\\title and \\scielo\\serial\\issue, respectively.
+#. images of the articles must be in: \\var\\www\\scielo\\htdocs\\img\\revistas\\<acronym>\\v*n*
+#. pdf files of the articles must be in: \\var\\www\\scielo\\bases\\pdf\\<acronym>\\v*n*
+#. translations files of the articles must be in: \\var\\www\\scielo\\bases\\translations\\<acronym>\\v*n*
+#. database of the articles, created by Converter, must be in: \\var\\www\\scielo\\serial\\<acronym>\\v*n*\base
+#. title and issue database must be in: \\scielo\\serial\\title and \\var\\www\\scielo\\serial\\issue, respectively.
 
 
 GeraPadrao.bat
@@ -69,7 +69,7 @@ GeraPadrao.bat
 #. Answer: continue or cancel
 
 
-#. If continue, edit \\scielo\\serial\\scilista.txt with the following format: 
+#. If continue, edit \\var\\www\\scielo\\serial\\scilista.txt with the following format: 
 
     .. code-block:: text
         
@@ -96,13 +96,13 @@ Example:
 #. Save and close this file
 #. Enter to continue
 #. End
-#. Open http://localhost
+#. Open http://scielo.local
 
 
 Checking the result and log file
 ================================
 
-Processing output is displayed on the screen (standard output) and is stored in the log file: \\scielo\\web\\log\\GeraPadrao.log or the file informed in GeraPadrao.
+Processing output is displayed on the screen (standard output) and is stored in the log file: \\var\\www\\scielo\\log\\GeraPadrao.log or the file informed in GeraPadrao.
 
 In case of error, processing stops, and wait for an user's intervention.
  
