@@ -50,7 +50,7 @@ Installation Guide
 Configuring the Apache Virtual Host
 ===================================
 
-    .. warning:
+    .. warning::
 
         * It was expected that a virtual host was already configured when preparing the requirements steps above. So, in most of the cases, will just be necessary to include the "ALIAS" and "CGI-BIN" configurations.
 
