@@ -203,11 +203,11 @@ Configuration of scielo.def.php
 
     1. Creating scielo.def.php
 
-       In C:\\var\\www\\scielo\\htdocs> there is a file named as scielo.def.php.template. 
+        In C:\\var\\www\\scielo\\htdocs> there is a file named as scielo.def.php.template. 
 
-       .. image:: img/en/scielo028.png
+        .. image:: img/en/scielo028.png
 
-       Rename the file to scielo.def.php.
+        Rename the file to scielo.def.php.
 
         .. image:: img/en/scielo029.png
 
@@ -229,3 +229,37 @@ Configuration of scielo.def.php
     5. Save all the changes made
 
     6. At this point, the website is probably working at: http://scielo.local/
+
+    7. Set the paramenters to 0 "Zero" once this website will be only available for articles tests in a stage environmnet.
+
+    .. block:: text
+
+        [CACHE]
+        ENABLED_CACHE=0
+
+        [SOCKET]
+        SOCK_PORT=
+        ENABLE_ACCESS_LOG=0
+
+        [services]
+        journal_manager=0
+        show_toolbox=0
+        show_datasus=0
+        show_reference=0
+        show_requests=0
+        show_login=0
+        show_send_by_email=0
+        show_cited_scielo=0
+        show_cited_google=0
+        show_similar_in_scielo=0
+        show_similar_in_google=0
+        show_article_references=0
+        show_scimago=0
+        show_article_wltranslation=0
+        show_fapesp_projects=0
+        show_press_releases=0
+        show_clinical_trials=0
+        show_ref_links=0
+        show_meta_citation_reference=0
+        show_ubio=0
+
