@@ -56,6 +56,8 @@ Configuration of the Apache Virtual Host
 
         * The virtual host sample below is a general sample on how to configure the SciELO Virtual Host. This configuration could change according each hosting services and their security polices.
 
+        * Remember to fix all the paths if you are installing the SciELO Site in a different directory.
+
     .. code-block: text
 
         <VirtualHost *:80>
