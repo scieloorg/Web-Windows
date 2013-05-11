@@ -1,29 +1,48 @@
-==============================
-Installation of SciELO Website
-==============================
+=========================================
+Installation of SciELO Website on Windows
+=========================================
 
+------------
 REQUIREMENTS
-============
+------------
 
-    - knowledge in Apache Httpd and PHP configuration
-    - Windows
-    - Apache 2.2.3 or later
-    - PHP 5.2.10 (required)
-        - PHP Modules
-            - libpng
-            - soap
-            - zlib
-            - XSL
-            - XML
-        - PHP Configurations
-            - short-open-tag = On
+- knowledge in Apache Httpd and PHP configuration
+- Windows
+- Apache 2.2.3 or later
+    - Apache Configurations
+        - Create an specific virtual host for the scielo site application
+- PHP 5.2.10 (required)
+    - PHP Modules
+        - libpng
+        - soap
+        - zlib
+        - XSL
+        - XML
+    - PHP Configurations
+        - short-open-tag = On
+        - PHP must be working above de desired domain and directory.
+            - sugested domain: scielo.local
+            - sugested diretory: c:\var\www\scielo\htdocs
 
-        .. warning::
-            
-             Before start installing SciELO, the PHP must be configured and working with Apache server, above the selected domain. It is not part of this installation guide to help install all the requirements.
+Checking the info.php above the desired domain
+==============================================
 
-Installation of CISIS and WWWISIS
-=================================
+Save the following code into c:\var\www\scielo\htdocs\info.php file.
+
+.. code-block:: text
+
+    <?php
+        info_php();
+    ?>
+
+Check if the code is working accessing: http://scielo.local/info.php
+
+.. warning::
+    
+     Before start installing SciELO, the PHP must be configured and working with Apache server, above the selected domain. It is not part of this installation guide to help install all the requirements.
+
+Installation Guide
+==================
 
 Choose one of the versions available, but for both you have to choose the same version.
     - CISIS
