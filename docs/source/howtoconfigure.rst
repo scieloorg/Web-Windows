@@ -42,7 +42,7 @@ GeraScielo.bat
 
     .. code-block:: text
 
-        GeraScielo \\var\\www\\scielo \\var\\www\\scielo log\GeraPadrao.log adiciona
+        GeraScielo \var\www\scielo \var\www\scielo log\GeraPadrao.log adiciona
 
 
 
@@ -106,7 +106,7 @@ Example:
 
     .. code-block:: text
 
-        EnviaImgPdfScielo.bat \\var\\www\\scielo transf\\EnviaImgPdfLogOn.txt log\\20011002.log cria \\var\\www\\scielo\\htdocs
+        EnviaImgPdfScielo.bat \var\www\scielo transf\EnviaImgPdfLogOn.txt log\20011002.log cria \var\www\scielo\htdocs
 
 
 EnviaTranslationScieloPadrao.bat
@@ -125,7 +125,7 @@ Example:
 
     .. code-block::text
 
-        EnviaTranslationSciELO.bat \\var\\www\\scielo transf\\EnviaTranslationSciELOLogOn.txt log\\20011002.log cria \\var\\www\\scielo\\htdocs
+        EnviaTranslationSciELO.bat \var\www\scielo transf\EnviaTranslationSciELOLogOn.txt log\20011002.log cria \var\www\scielo\htdocs
 
 
 
@@ -191,6 +191,6 @@ Example:
     
     .. code-block:: text
                                    
-        EnviaBasesScielo.bat \\var\\www\\scielo transf\\EnviaBasesLogOn.txt log\\20011002.log cria
+        EnviaBasesScielo.bat \var\www\scielo transf\EnviaBasesLogOn.txt log\20011002.log cria
 
 
