@@ -37,6 +37,8 @@ Save the following code into c:\\var\\www\\scielo\\htdocs\\info.php file.
 
 Check if the code is working accessing: http://scielo.local/info.php
 
+The page presented by the code above is like:
+
 .. warning::
     
      Before start installing SciELO, the PHP must be configured and working with Apache server, above the selected domain. It is not part of this installation guide to help install all the requirements.
@@ -45,9 +47,61 @@ Check if the code is working accessing: http://scielo.local/info.php
 Installation Guide
 ------------------
 
-1. Preparing the environment and install
+Configuration of the Apache Virtual Host
+========================================
 
-    1.1. Creating the directories to receive the application
+    .. warning:
+
+        * It was expected that a virtual host was already configured when preparing the requirements steps above. So, in most of the cases, will just be necessary to include the "ALIAS" and "CGI-BIN" configurations.
+
+        * The virtual host sample below is a general sample on how to configure the SciELO Virtual Host. This configuration could change according each hosting services and their security polices.
+
+    .. code-block: text
+
+        <VirtualHost *:80>
+            ServerAdmin scielo@scielo.local
+            DocumentRoot "C:/var/www/scielo/htdocs/"
+            ServerName scielo.local
+
+            <Directory "C:/var/www/scielo/htdocs/">
+                Options FollowSymLinks +Indexes
+                AllowOverride None
+                Order allow,deny
+                Allow from all
+                DirectoryIndex index.html index.php
+                Satisfy all
+            </Directory>
+
+            Alias /pdf/ "C:/var/www/scielo/bases/pdf/" 
+            Alias /translation/ "C:/var/www/scielo/bases/translation/"
+
+            <Directory "C:/var/www/scielo/bases/pdf/">
+                Options FollowSymLinks +Indexes
+                AllowOverride None
+                Order allow,deny
+                Allow from all
+                Satisfy all        
+            </directory>
+
+            ScriptAlias /cgi-bin/ "C:/var/www/scielo/cgi-bin/"
+
+            <Directory "C:/var/www/scielo/cgi-bin/">
+                AllowOverride None
+                Options None
+                Order allow,deny
+                Allow from all
+            </directory>
+
+            ErrorLog logs/scielo-local-error.log
+            CustomLog logs/scielo-local-access.log common 
+        </VirtualHost>
+
+
+
+Preparing the environment and install
+=====================================
+
+    1. Creating the directories to receive the application
 
         .. code-block:: text
 
@@ -148,55 +202,6 @@ Installation Guide
 
             WXIS release date: Sep 24 2008    
 
-
-Configuration of the Apache Virtual Host
-========================================
-
-    .. warning:
-
-        * The virtual host sample above is a general sample on how to configure the SciELO Virtual Host. This configuration could change according each hosting services and their security polices.
-
-        * It was expected that a virtual host was already configured when preparing the requirements steps. So, in most of the cases, will just be necessary to include the "ALIAS" and "CGI-BIN" configurations.
-
-    .. code-block: text
-
-        <VirtualHost *:80>
-            ServerAdmin scielo@scielo.local
-            DocumentRoot "C:/var/www/scielo/htdocs/"
-            ServerName scielo.local
-
-            <Directory "C:/var/www/scielo/htdocs/">
-                Options FollowSymLinks +Indexes
-                AllowOverride None
-                Order allow,deny
-                Allow from all
-                DirectoryIndex index.html index.php
-                Satisfy all
-            </Directory>
-
-            Alias /pdf/ "C:/var/www/scielo/bases/pdf/" 
-            Alias /translation/ "C:/var/www/scielo/bases/translation/"
-
-            <Directory "C:/var/www/scielo/bases/pdf/">
-                Options FollowSymLinks +Indexes
-                AllowOverride None
-                Order allow,deny
-                Allow from all
-                Satisfy all        
-            </directory>
-
-            ScriptAlias /cgi-bin/ "C:/var/www/scielo/cgi-bin/"
-
-            <Directory "C:/var/www/scielo/cgi-bin/">
-                AllowOverride None
-                Options None
-                Order allow,deny
-                Allow from all
-            </directory>
-
-            ErrorLog logs/scielo-local-error.log
-            CustomLog logs/scielo-local-access.log common 
-        </VirtualHost>
 
 Configuration of scielo.def.php
 =============================== 
