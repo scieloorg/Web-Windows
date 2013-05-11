@@ -22,12 +22,12 @@ REQUIREMENTS
         - short-open-tag = On
         - PHP must be working above de desired domain and directory.
             - sugested domain: scielo.local
-            - sugested diretory: c:\var\www\scielo\htdocs
+            - sugested diretory: c:\\var\\www\scielo\\htdocs
 
 Checking the info.php above the desired domain
 ==============================================
 
-Save the following code into c:\var\www\scielo\htdocs\info.php file.
+Save the following code into c:\\var\\www\\scielo\\htdocs\\info.php file.
 
 .. code-block:: text
 
@@ -41,76 +41,117 @@ Check if the code is working accessing: http://scielo.local/info.php
     
      Before start installing SciELO, the PHP must be configured and working with Apache server, above the selected domain. It is not part of this installation guide to help install all the requirements.
 
+------------------
 Installation Guide
-==================
+------------------
 
-Choose one of the versions available, but for both you have to choose the same version.
-    - CISIS
-         - download link: http://wiki.bireme.org/en/index.php/CISIS
-         - install in \scielo\web\proc\cisis\ extracting all contend from the downloaded file.
-    - WWWISIS
-         - download link: http://wiki.bireme.org/en/index.php/WWWISIS
-         - install in \scielo\web\cgi-bin\ extracting all contend from the downloaded file.
+1. Preparing the environment and install
 
+    1.1. Creating the directories to receive the application
 
-Download
-=========
+        .. code-block:: text
 
-#. Link of versions available for SciELO Site: https://github.com/scieloorg/Web/tags
-#. Link of versions available for Windows Patch: https://github.com/scieloorg/Web-Windows/tags
+            c:\\> md \\var\\www\\scielo
+            c:\\> cd \\var\\www\\scielo
+            c:\\var\\www\\scielo>
 
-NOTE: Both must be extracted to the same path.
+    1.2. Downloading packages from GitHub
 
-Installation
-============
+        Link of versions available for SciELO Site: https://github.com/scieloorg/Web/tags
+        Link of versions available for Windows Patch: https://github.com/scieloorg/Web-Windows/tags
 
-#. Create the path to install the SciELO Website.
-    The default is c:\var\www\scielo.
+    1.3. Firts, extract the SciELO Site package at c:\\var\\www\\scielo>
 
-#. Extract zip file of SciELO Web for Linux package
-#. Extract zip file of SciELO Web for Windows package, overwriting the Linux installation.
+        The created directory structure at c:\\var\\www\\scielo> must be 
 
+        .. code-block:: text
 
-Extract the zip file of SciELO Site for Linux
----------------------------------------------
+            <package_name>\\bases\\
+            <package_name>\\bases-work_modelo\\
+            <package_name>\\bases_modelo\\
+            <package_name>\\cgi-bin\\
+            <package_name>\\docs\\
+            <package_name>\\htdocs\\
+            <package_name>\\ignore.txt
+            <package_name>\\proc\\
+            <package_name>\\serial_modelo\\
 
-#. Download the most recent version of SciELO Site for Linux, then extract it.
+        Move all the content from <package_name> to c:\\var\\www\\scielo>
 
-    .. image:: img/en/scielo020.png
+        Remove the empty directory <package_name>
 
-#. Select the extracted content.
+    1.4. Then, extract the SciELO Windows package at c:\\var\\www\\scielo>.
 
-    .. image:: img/en/scielo021.png
+    .. warning::
+    
+        This extraction will overwrite some files from the SciELO Site package. You must accept all the files and dirctories replacements.    
 
-#. Copy the selected content.
+    1.5. Some folders already exist. You must accept to overwrite them.
 
-    .. image:: img/en/scielo022.png
+        .. image:: img/en/scielo025.png
 
-#. Go to the directory where is the web structure. For instance, c:\\scielo_br\web\\.
+    1.6. Some files already exist. You must accept to overwrite them. 
 
-    .. image:: img/en/scielo023.png
+        .. image:: img/en/scielo026.png
 
-    Copying process.
+        .. image:: img/en/scielo027.png
 
-    .. image:: img/en/scielo024.png
-
-
-
-Extract the zip file of SciELO Site for Windows
------------------------------------------------
-
-#. Execute the same steps as SciELO Site for Linux, using the zip file for Windows.
-
-#. Some folders already exist. You must accept to overwrite them.
-
-    .. image:: img/en/scielo025.png
-
-#. Some files already exist. You must accept to overwrite them. 
-
-    .. image:: img/en/scielo026.png
+        .. image:: img/en/Metodologia-linux003.png
 
 
-    .. image:: img/en/scielo027.png
+    1.7. Install the CISIS and WISIS tools at the SciELO Site diretories
+
+        Download the `CISIS package <http://wiki.bireme.org/en/index.php/CISIS>`_ from the BIREME products website and extract it at c:\\var\\www\\scielo\\proc\\cisis>.
+
+        The recommended version is **CISIS 1030**
+
+        To check the CISIS version, after unzip the donwloaded file at c:\\var\\www\\scielo\\proc\\cisis>, run: 
+
+        .. code-block:: text
+
+            c:\\var\\www\\scielo\\proc\\cisis>mx what
+
+        The result must be:
+
+        .. code-block:: text
+
+            CISIS Interface v5.2b/GC/W/L/M/32767/10/30/I - Utility MX
+            CISIS Interface v5.2b/.iy0/Z/4GB/GIZ/DEC/ISI/UTL/INVX/B7/FAT/CIP/CGI/MX/W
+            Copyright (c)BIREME/PAHO 2006. [!http://www.bireme.br/products/cisis]
+
+        **WWWISIS Package**
+
+        at /var/www/scielo/cgi-bin
+
+        Download the `WWWISIS package <http://wiki.bireme.org/en/index.php/WWWISIS>`_ from the BIREME products website.
+
+        The recommended version is **CISIS 1030**
+
+        To check the WWWISIS version, at /var/www/scielo/cgi-bin/, run:
+
+        .. code-block:: text
+
+            #/var/www/scielo/cgi-bin$>wxis hello
+
+        If you have already configured the virtual host, you can check WWWISIS version by accessing the url:
+
+        .. code-block:: text
+
+            http://scielo.local/cgi-bin/wxis.exe?hello
+        
+        where scielo.local is the website address
+
+        The result must be:
+
+        .. code-block:: text
+        
+            CISIS Interface v5.4.02_p5/GC/512G/W/L4/M/32767/10/30/I - XML !IsisScript WWWISIS 7.1d
+            CISIS Interface v5.4.02_p5/.iy0/Z/GIZ/DEC/ISI/UTL/INVX/B7/FAT/CIP/CGI/MX/W
+            Copyright (c)BIREME/PAHO 2008. [!http://www.bireme.br/products/cisis]
+            Copyright (c)BIREME/PAHO 2008. [!http://bvsmodelo.bvsalud.org/php/index.php?lang=pt]
+            Copyright (c)BIREME/PAHO 2008. [!http://bvsmodelo.bvsalud.org/php/level.php?lang=pt&component=28&item=1]
+
+            WXIS release date: Sep 24 2008    
 
 
 Configuration of the virtual host
