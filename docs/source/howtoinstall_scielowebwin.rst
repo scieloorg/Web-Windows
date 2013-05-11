@@ -232,7 +232,7 @@ Configuration of scielo.def.php
 
     7. Set the paramenters to 0 "Zero" once this website will be only available for articles tests in a stage environmnet.
 
-    .. block:: text
+    .. code-block:: text
 
         [CACHE]
         ENABLED_CACHE=0
@@ -263,3 +263,8 @@ Configuration of scielo.def.php
         show_meta_citation_reference=0
         show_ubio=0
 
+    8. Save all the changes made
+
+    9. The SciELO site is prepared to receive new production files for tests.
+
+    See the other guides about how to send data to the production server, and for processing in the root level of this documentation.
