@@ -198,37 +198,6 @@ Configuration of the Apache Virtual Host
             CustomLog logs/scielo-local-access.log common 
         </VirtualHost>
 
-    Edit the virtual host previously configured in the requirements.
-
-
-    .. image:: img/en/scielo012.png
-
-
-    .. image:: img/en/scielo013.png
-
-
-    .. image:: img/en/scielo014.png
-
-#. Delete the content shown in the figure above, and let only the corresponding text of the figure below.
-
-    .. image:: img/en/scielo015.png
-
-#. Insert in the file, the virtual host model, according to the figure below.
-
-    .. image:: img/en/scielo058.png
-
-#. Fix the paths.
-
-    .. image:: img/en/scielo017.png
-
-#. Save the file.
-
-    .. image:: img/en/scielo018.png
-
-#. Restart Apache.
-
-    .. image:: img/en/scielo019.png
-
 Configuration of scielo.def.php
 =============================== 
 
