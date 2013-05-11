@@ -111,12 +111,12 @@ Install SciELO Site
             c:\> cd \var\www\scielo
             c:\var\www\scielo>
 
-    1.2. Downloading packages from GitHub
+    2. Downloading packages from GitHub
 
         Link of versions available for SciELO Site: https://github.com/scieloorg/Web/tags
         Link of versions available for Windows Patch: https://github.com/scieloorg/Web-Windows/tags
 
-    1.3. Firts, extract the SciELO Site package at c:\\var\\www\\scielo>
+    3. Firts, extract the SciELO Site package at c:\\var\\www\\scielo>
 
         The created directory structure at c:\\var\\www\\scielo> must be 
 
@@ -136,23 +136,23 @@ Install SciELO Site
 
         Remove the empty directory <package_name>
 
-    1.4. Then, extract the SciELO Windows package at c:\\var\\www\\scielo>.
+    4. Then, extract the SciELO Windows package at c:\\var\\www\\scielo>.
 
     .. warning::
     
         This extraction will overwrite some files from the SciELO Site package. You must accept all the files and dirctories replacements.    
 
-    1.5. Some folders already exist. You must accept to overwrite them.
+    5. Some folders already exist. You must accept to overwrite them.
 
         .. image:: img/en/scielo025.png
 
-    1.6. Some files already exist. You must accept to overwrite them. 
+    6. Some files already exist. You must accept to overwrite them. 
 
         .. image:: img/en/scielo026.png
 
         .. image:: img/en/scielo027.png
 
-    1.7. Install the CISIS tool at the SciELO Site diretories
+    7. Install the CISIS tool at the SciELO Site diretories
 
         Download the `CISIS package <http://wiki.bireme.org/en/index.php/CISIS>`_ from the BIREME products website and extract it at c:\\var\\www\\scielo\\proc\\cisis>.
 
@@ -172,7 +172,7 @@ Install SciELO Site
             CISIS Interface v5.2b/.iy0/Z/4GB/GIZ/DEC/ISI/UTL/INVX/B7/FAT/CIP/CGI/MX/W
             Copyright (c)BIREME/PAHO 2006. [!http://www.bireme.br/products/cisis]
 
-    1.8. Install the WWWISIS tool at the SciELO Site diretories
+    8. Install the WWWISIS tool at the SciELO Site diretories
 
         Download the `WWWISIS package <http://wiki.bireme.org/en/index.php/WWWISIS>`_ from the BIREME products website and extract it at c:\\var\\www\\scielo\\cgi-bin>.
 
