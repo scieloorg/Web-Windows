@@ -5,9 +5,16 @@
 
 REQUIREMENTS
 ------------
-- Windows
-- Apache 2.2.22
-- PHP 5.2.14
+    - Windows
+    - Apache 2.2.3 or later
+    - PHP 5.2.10 (required)
+        - PHP Modules
+            - libpng
+            - soap
+            - zlib
+            - XSL
+            - XML
+    - knowledge in Apache Httpd and PHP configuration
 
 .. toctree::
     :maxdepth: 2
