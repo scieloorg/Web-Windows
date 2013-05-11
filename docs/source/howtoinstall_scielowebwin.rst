@@ -47,8 +47,8 @@ The page presented by the code above is like:
 Installation Guide
 ------------------
 
-Configuration of the Apache Virtual Host
-========================================
+Configuring the Apache Virtual Host
+===================================
 
     .. warning:
 
