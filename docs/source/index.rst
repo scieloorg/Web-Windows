@@ -8,17 +8,12 @@ Welcome to SciELO Web site for Windows's documentation!
 
 
 .. toctree::
-    :maxdepth: 3
-
-    requirements.rst
+    :maxdepth: 2
 
     howtoinstall_scielowebwin.rst
-
     howtoconfigure.rst
-
     howtogerapadrao.rst
     howtoenvia.rst
-
 
 Support
 -------

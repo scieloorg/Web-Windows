@@ -2,6 +2,38 @@
 Installation of SciELO Website
 ==============================
 
+REQUIREMENTS
+============
+
+    - knowledge in Apache Httpd and PHP configuration
+    - Windows
+    - Apache 2.2.3 or later
+    - PHP 5.2.10 (required)
+        - PHP Modules
+            - libpng
+            - soap
+            - zlib
+            - XSL
+            - XML
+        - PHP Configurations
+            - short-open-tag = On
+
+        .. warning::
+            
+             Before start installing SciELO, the PHP must be configured and working with Apache server, above the selected domain. It is not part of this installation guide to help install all the requirements.
+
+Installation of CISIS and WWWISIS
+=================================
+
+Choose one of the versions available, but for both you have to choose the same version.
+    - CISIS
+         - download link: http://wiki.bireme.org/en/index.php/CISIS
+         - install in \scielo\web\proc\cisis\ extracting all contend from the downloaded file.
+    - WWWISIS
+         - download link: http://wiki.bireme.org/en/index.php/WWWISIS
+         - install in \scielo\web\cgi-bin\ extracting all contend from the downloaded file.
+
+
 Download
 =========
 
@@ -14,8 +46,7 @@ Installation
 ============
 
 #. Create the path to install the SciELO Website.
-    The default is c:\\scielo\\web.
-    The example uses c:\\scielo_br.
+    The default is c:\var\www\scielo.
 
 #. Extract zip file of SciELO Web for Linux package
 #. Extract zip file of SciELO Web for Windows package, overwriting the Linux installation.
