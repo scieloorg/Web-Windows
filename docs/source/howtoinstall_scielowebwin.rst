@@ -58,13 +58,12 @@ Configuration of the Apache Virtual Host
 
         * Remember to fix all the paths if you are installing the SciELO Site in a different directory.
 
-    .. code-block: text
+    .. code-block:: text
 
         <VirtualHost *:80>
             ServerAdmin scielo@scielo.local
             DocumentRoot "C:/var/www/scielo/htdocs/"
             ServerName scielo.local
-
             <Directory "C:/var/www/scielo/htdocs/">
                 Options FollowSymLinks +Indexes
                 AllowOverride None
@@ -73,10 +72,8 @@ Configuration of the Apache Virtual Host
                 DirectoryIndex index.html index.php
                 Satisfy all
             </Directory>
-
             Alias /pdf/ "C:/var/www/scielo/bases/pdf/" 
             Alias /translation/ "C:/var/www/scielo/bases/translation/"
-
             <Directory "C:/var/www/scielo/bases/pdf/">
                 Options FollowSymLinks +Indexes
                 AllowOverride None
@@ -84,21 +81,16 @@ Configuration of the Apache Virtual Host
                 Allow from all
                 Satisfy all        
             </directory>
-
             ScriptAlias /cgi-bin/ "C:/var/www/scielo/cgi-bin/"
-
             <Directory "C:/var/www/scielo/cgi-bin/">
                 AllowOverride None
                 Options None
                 Order allow,deny
                 Allow from all
             </directory>
-
             ErrorLog logs/scielo-local-error.log
             CustomLog logs/scielo-local-access.log common 
         </VirtualHost>
-
-
 
 Install SciELO Site
 ===================
@@ -114,6 +106,7 @@ Install SciELO Site
     2. Downloading packages from GitHub
 
         Link of versions available for SciELO Site: https://github.com/scieloorg/Web/tags
+        
         Link of versions available for Windows Patch: https://github.com/scieloorg/Web-Windows/tags
 
     3. Firts, extract the SciELO Site package at c:\\var\\www\\scielo>
@@ -152,7 +145,7 @@ Install SciELO Site
 
         .. image:: img/en/scielo027.png
 
-    7. Install the CISIS tool at the SciELO Site diretories
+    7. Install the CISIS tool at the SciELO Site directories
 
         Download the `CISIS package <http://wiki.bireme.org/en/index.php/CISIS>`_ from the BIREME products website and extract it at c:\\var\\www\\scielo\\proc\\cisis>.
 
@@ -172,7 +165,7 @@ Install SciELO Site
             CISIS Interface v5.2b/.iy0/Z/4GB/GIZ/DEC/ISI/UTL/INVX/B7/FAT/CIP/CGI/MX/W
             Copyright (c)BIREME/PAHO 2006. [!http://www.bireme.br/products/cisis]
 
-    8. Install the WWWISIS tool at the SciELO Site diretories
+    8. Install the WWWISIS tool at the SciELO Site directories
 
         Download the `WWWISIS package <http://wiki.bireme.org/en/index.php/WWWISIS>`_ from the BIREME products website and extract it at c:\\var\\www\\scielo\\cgi-bin>.
 
