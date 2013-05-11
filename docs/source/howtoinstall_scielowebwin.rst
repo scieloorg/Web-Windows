@@ -96,12 +96,9 @@ Installation Guide
 
         .. image:: img/en/scielo027.png
 
-        .. image:: img/en/Metodologia-linux003.png
+    1.7. Install the CISIS tool at the SciELO Site diretories
 
-
-    1.7. Install the CISIS and WISIS tools at the SciELO Site diretories
-
-        Download the `CISIS package <http://wiki.bireme.org/en/index.php/CISIS>`_ from the BIREME products website and extract it at c:\var\\www\scielo\proc\cisis>.
+        Download the `CISIS package <http://wiki.bireme.org/en/index.php/CISIS>`_ from the BIREME products website and extract it at c:\\var\\www\\scielo\\proc\\cisis>.
 
         The recommended version is **CISIS 1030**
 
@@ -119,13 +116,11 @@ Installation Guide
             CISIS Interface v5.2b/.iy0/Z/4GB/GIZ/DEC/ISI/UTL/INVX/B7/FAT/CIP/CGI/MX/W
             Copyright (c)BIREME/PAHO 2006. [!http://www.bireme.br/products/cisis]
 
-        **WWWISIS Package**
+    1.8. Install the WWWISIS tool at the SciELO Site diretories
 
-        at /var/www/scielo/cgi-bin
+        Download the `WWWISIS package <http://wiki.bireme.org/en/index.php/WWWISIS>`_ from the BIREME products website and extract it at c:\\var\\www\\scielo\\cgi-bin>.
 
-        Download the `WWWISIS package <http://wiki.bireme.org/en/index.php/WWWISIS>`_ from the BIREME products website.
-
-        The recommended version is **CISIS 1030**
+        The recommended version is **WWWISIS 1030**
 
         To check the WWWISIS version, at c:\var\www\scielo\cgi-bin\, run:
 
@@ -154,8 +149,54 @@ Installation Guide
             WXIS release date: Sep 24 2008    
 
 
-Configuration of the virtual host
-=================================
+Configuration of the Apache Virtual Host
+========================================
+
+    .. warning:
+
+        * The virtual host sample above is a general sample on how to configure the SciELO Virtual Host. This configuration could change according each hosting services and their security polices.
+
+        * It was expected that a virtual host was already configured when preparing the requirements steps. So, in most of the cases, will just be necessary to include the "ALIAS" and "CGI-BIN" configurations.
+
+    .. code-block: text
+
+        <VirtualHost *:80>
+            ServerAdmin scielo@scielo.local
+            DocumentRoot "C:/var/www/scielo/htdocs/"
+            ServerName scielo.local
+
+            <Directory "C:/var/www/scielo/htdocs/">
+                Options FollowSymLinks +Indexes
+                AllowOverride None
+                Order allow,deny
+                Allow from all
+                DirectoryIndex index.html index.php
+                Satisfy all
+            </Directory>
+
+            Alias /pdf/ "C:/var/www/scielo/bases/pdf/" 
+            Alias /translation/ "C:/var/www/scielo/bases/translation/"
+
+            <Directory "C:/var/www/scielo/bases/pdf/">
+                Options FollowSymLinks +Indexes
+                AllowOverride None
+                Order allow,deny
+                Allow from all
+                Satisfy all        
+            </directory>
+
+            ScriptAlias /cgi-bin/ "C:/var/www/scielo/cgi-bin/"
+
+            <Directory "C:/var/www/scielo/cgi-bin/">
+                AllowOverride None
+                Options None
+                Order allow,deny
+                Allow from all
+            </directory>
+
+            ErrorLog logs/scielo-local-error.log
+            CustomLog logs/scielo-local-access.log common 
+        </VirtualHost>
 
     Edit the virtual host previously configured in the requirements.
 
