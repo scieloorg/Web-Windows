@@ -100,8 +100,8 @@ Configuration of the Apache Virtual Host
 
 
 
-Preparing the environment and install
-=====================================
+Install SciELO Site
+===================
 
     1. Creating the directories to receive the application
 
@@ -269,7 +269,6 @@ Changing vm.scielo.br to site name
 
     .. image:: img/en/scielo040.png
 
-
     .. image:: img/en/scielo041.png
 
     Click on Replace all button.
@@ -283,87 +282,21 @@ Changing vm.scielo.br to site name
 Changing application path
 -------------------------
 
-    Replace /home/scielo/www/ by /scielo_br/.
+    Replace /home/scielo/www/ by /var/www/scielo/.
 
     .. image:: img/en/scielo045.png
 
-
     .. image:: img/en/scielo046.png
 
-
     .. image:: img/en/scielo047.png
-
-Changing SOCKET
----------------
-   Find [SOCKET] word, according to the figure.
-
-    .. image:: img/en/scielo060.png
-
-   Delete 8899 number
-
-    .. image:: img/en/scielo061.png
 
 Saving scielo.def.php
 ---------------------
 
     .. image:: img/en/scielo062.png
 
-hosts file
-==========
-
-The website domain does not exist yet. So, it has to be registered in the computer which hosts the website.
-
-Open and edit the hosts file.
-
-Use Wordpad/Notepad
-
-    .. image:: img/en/scielo048.png
-
-Click on Open button
-
-    .. image:: img/en/scielo049.png
-
-Go to C:\\Windows\\System32\\drivers\\etc
-
-    .. image:: img/en/scielo050.png
-
-List all the files
-
-    .. image:: img/en/scielo051.png
-
-Select the hosts file and click on OK button
-
-    .. image:: img/en/scielo052.png
-
-
-    .. image:: img/en/scielo053.png
-
-The content of the hosts file is below:
- 
-    .. image:: img/en/scielo054.png
-
-Check the computer's IP, using the ipconfig command.
-
-    .. image:: img/en/scielo055.png
-
-Use the IP shown, and insert it in the hosts file.
-
-    .. image:: img/en/scielo056.png
-
-Save the file.
-
-    .. image:: img/en/scielo057.png
 
 Testing the installation
 ------------------------
 
 Before testing, be sure there are the databases generated.
-
-
-========
-Updating
-========
-Execute the same steps used for installation:
-#. Download
-#. Installation (extraction of Linux and Windows packages)
-
