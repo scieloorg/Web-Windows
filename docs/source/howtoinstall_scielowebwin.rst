@@ -51,9 +51,9 @@ Installation Guide
 
         .. code-block:: text
 
-            c:\\> md \\var\\www\\scielo
-            c:\\> cd \\var\\www\\scielo
-            c:\\var\\www\\scielo>
+            c:\> md \var\www\scielo
+            c:\> cd \var\www\scielo
+            c:\var\www\scielo>
 
     1.2. Downloading packages from GitHub
 
@@ -66,15 +66,15 @@ Installation Guide
 
         .. code-block:: text
 
-            <package_name>\\bases\\
-            <package_name>\\bases-work_modelo\\
-            <package_name>\\bases_modelo\\
-            <package_name>\\cgi-bin\\
-            <package_name>\\docs\\
-            <package_name>\\htdocs\\
-            <package_name>\\ignore.txt
-            <package_name>\\proc\\
-            <package_name>\\serial_modelo\\
+            <package_name>\bases\
+            <package_name>\bases-work_modelo\
+            <package_name>\bases_modelo\
+            <package_name>\cgi-bin\
+            <package_name>\docs\
+            <package_name>\htdocs\
+            <package_name>\ignore.txt
+            <package_name>\proc\
+            <package_name>\serial_modelo\
 
         Move all the content from <package_name> to c:\\var\\www\\scielo>
 
@@ -101,7 +101,7 @@ Installation Guide
 
     1.7. Install the CISIS and WISIS tools at the SciELO Site diretories
 
-        Download the `CISIS package <http://wiki.bireme.org/en/index.php/CISIS>`_ from the BIREME products website and extract it at c:\\var\\www\\scielo\\proc\\cisis>.
+        Download the `CISIS package <http://wiki.bireme.org/en/index.php/CISIS>`_ from the BIREME products website and extract it at c:\var\\www\scielo\proc\cisis>.
 
         The recommended version is **CISIS 1030**
 
@@ -109,7 +109,7 @@ Installation Guide
 
         .. code-block:: text
 
-            c:\\var\\www\\scielo\\proc\\cisis>mx what
+            c:\var\www\scielo\proc\cisis> mx what
 
         The result must be:
 
@@ -127,11 +127,11 @@ Installation Guide
 
         The recommended version is **CISIS 1030**
 
-        To check the WWWISIS version, at /var/www/scielo/cgi-bin/, run:
+        To check the WWWISIS version, at c:\var\www\scielo\cgi-bin\, run:
 
         .. code-block:: text
 
-            #/var/www/scielo/cgi-bin$>wxis hello
+            c:\var\www\scielo\cgi-bin$> wxis hello
 
         If you have already configured the virtual host, you can check WWWISIS version by accessing the url:
 
@@ -157,34 +157,8 @@ Installation Guide
 Configuration of the virtual host
 =================================
 
-#. Open httpd.conf file (Apache configuration file), with notepad or wordpad, to fix some parameters related to PHP.
+    Edit the virtual host previously configured in the requirements.
 
-    .. image:: img/en/scielo005.png
-
-
-    .. image:: img/en/scielo006.png
-
-#. Search for AddType, according to the two lines of the figure below.
-
-    .. image:: img/en/scielo007.png
-
-#. Add two lines, according to the figure.
-
-    .. image:: img/en/scielo008.png
-
-#. Search for httpd-vhosts.conf, according to the figure below.
-
-    .. image:: img/en/scielo009.png
-
-#. Remove the comment character.
-
-    .. image:: img/en/scielo010.png
-
-#. Save the file.
-
-    .. image:: img/en/scielo011.png
-
-#. Open httpd-vhosts.conf file, with Notepad or WordPad.
 
     .. image:: img/en/scielo012.png
 
