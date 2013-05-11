@@ -201,93 +201,34 @@ Install SciELO Site
 Configuration of scielo.def.php
 =============================== 
 
-Creating scielo.def.php
------------------------
+    1. Creating scielo.def.php
 
-   In C:\\scielo_br\\htdocs there is a file named as scielo.def.template.php. 
+       In C:\\var\\www\\scielo\\htdocs> there is a file named as scielo.def.php.template. 
 
-   .. image:: img/en/scielo028.png
+       .. image:: img/en/scielo028.png
 
-   Rename the file to scielo.def.php.
+       Rename the file to scielo.def.php.
 
-    .. image:: img/en/scielo029.png
+        .. image:: img/en/scielo029.png
 
-    Click on Yes button to accept the change.
+        Click on Yes button to accept the change.
 
-    .. image:: img/en/scielo030.png
+        .. image:: img/en/scielo030.png
 
 
-Open scielo.def.php, by clicking on the file
---------------------------------------------    
+    2. Edit scielo.def.php using your preferred text editor
 
-    .. image:: img/en/scielo031.png
+    3. Changing vm.scielo.br to scielo.local
 
-    If WordPad/Notepad was not set to open this file, click on Search button.
+        Search for **vm.scielo.br** and replace all the occurences by **scielo.local** or for each other name previously configured at the virtualhost
 
-    .. image:: img/en/scielo032.png
+    4. Changing application path
 
-    Go to C:\\Windows, search for Wordpad/Notepad, select one of them, then click on Open button.
+        Search for **/home/scielo/www/** and replace all the occurences by ** /var/www/scielo/** or for each other patch previously configured at the virtualhost
 
-    .. image:: img/en/scielo033.png
+    5. Save all the changes made
 
-    Select one of them, then click on OK button.
-
-    .. image:: img/en/scielo034.png
-
-Open scielo.def.php, by WordPad or Notepad program
---------------------------------------------------
-    
-    .. image:: img/en/scielo035.png
-        
-    Click on Open button.
-
-    .. image:: img/en/scielo036.png
-        
-    Go to C:\\scielo_br\\htdocs
-
-    .. image:: img/en/scielo037.png
-        
-    Select the ALL THE TYPES, because the php extension is not known by WordPad.
-
-    .. image:: img/en/scielo038.png
-
-    Select scielo.def.php file, then click on Open button.
-
-    .. image:: img/en/scielo039.png
-
-Changing vm.scielo.br to site name
-----------------------------------
-
-    Search for vm.scielo.br and replace it by same name informed at virtual host configuration.
-
-    .. image:: img/en/scielo040.png
-
-    .. image:: img/en/scielo041.png
-
-    Click on Replace all button.
-
-    .. image:: img/en/scielo042.png
-
-    Informed the change. Click on OK button.
-
-    .. image:: img/en/scielo043.png
-
-Changing application path
--------------------------
-
-    Replace /home/scielo/www/ by /var/www/scielo/.
-
-    .. image:: img/en/scielo045.png
-
-    .. image:: img/en/scielo046.png
-
-    .. image:: img/en/scielo047.png
-
-Saving scielo.def.php
----------------------
-
-    .. image:: img/en/scielo062.png
-
+    6. At this point, the website is probably working at: http://scielo.local/
 
 Testing the installation
 ------------------------
