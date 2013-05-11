@@ -229,8 +229,3 @@ Configuration of scielo.def.php
     5. Save all the changes made
 
     6. At this point, the website is probably working at: http://scielo.local/
-
-Testing the installation
-------------------------
-
-Before testing, be sure there are the databases generated.
