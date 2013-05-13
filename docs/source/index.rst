@@ -14,9 +14,9 @@ The focus of this Guide is to guide the IT managers to intall the following task
 #. Delorean2Isis (Import databases from the Journal Manager to the conversion process) https://github.com/scieloorg/delorean2isis
 #. Staging SciELO Website on Windows (Just for articles check)
 #. GeraPadrao (Processing of new data to publish the new data in the website)
-#. EnviaPDFSciELOPadrao (Send PDF files to the official website)
 #. EnviaTranslationSciELOPadrao (Send Translation files to the official website)
-#. EnviaBasesSciELO (Send databases to SciELO for biblimetric processing)
+#. EnviaImgPdfSciELOPadrao (Send PDF files to the official website)
+#. EnviaBasesSciELOPadrao (Send databases to SciELO for biblimetric processing)
 
 .. toctree::
     :maxdepth: 2
