@@ -10,7 +10,7 @@ Edit c:\\var\\www\\scielo\\proc\\GeraPadrao.bat
 GeraScielo.bat
 --------------
 
-    Fix the path acording to the SciELO Site directory, for the lines below:: 
+    Fix the path according to the SciELO Site directory, for the lines below:: 
 
         call notepad \scielo\serial\scilista.lst
         ***
