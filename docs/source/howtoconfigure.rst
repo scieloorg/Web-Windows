@@ -1,32 +1,33 @@
-=============================================
-Configuration of GeraPadrao and Envia2Medline
-=============================================
-
-Scripts
-=======
-
-    - GeraPadrao.bat and GeraScielo.bat
-    - EnviaBasesScieloPadrao.bat and EnviaBasesScielo.bat
-    - EnviaImgPdfScieloPadrao.bat and EnviaImgPdfScielo.bat
-    - EnviaTranslationScieloPadrao.bat and EnviaTranslationScielo.bat
+========================================
+Configuring GeraPadrao and Envia2Medline
+========================================
 
 Configuring GeraPadrao.bat
 ==========================
 
 Edit c:\\var\\www\\scielo\\proc\\GeraPadrao.bat
 
-GeraPadrao.bat is a short cut to GeraScielo.bat.
-
-Edit GeraPadrao.bat to set the parameters for GeraScielo.bat.
-
 GeraScielo.bat
 --------------
 
+    Fix the path acording to the SciELO Site directory, for the lines below:: 
+
+        call notepad \scielo\serial\scilista.lst
+        ***
+        rmdir /S /Q \scielo\web\bases-work
+        rmdir /S /Q \scielo\web\bases\artigo
+        rmdir /S /Q \scielo\web\bases\iah
+        rmdir /S /Q \scielo\web\bases\issue
+        rmdir /S /Q \scielo\web\bases\newissue
+        ***
+        md \scielo\web\bases-work
+        ***
+        call GeraScielo.bat \scielo \scielo\web log\GeraPadrao.log adiciona
+
+
     .. code-block:: text
 
-        GeraScielo <path_data> <path_web_site> <log_file> [cria]
-
-
+        call GeraScielo <path_data> <path_web_site> <log_file> adiciona
 
     where
        
