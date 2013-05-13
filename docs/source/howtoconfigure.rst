@@ -73,60 +73,138 @@ considering the path \\var\\www\\scielo the changes must be:
 
     GeraScielo \var\www\scielo transf\EnviaImgPdfLogOn.txt log\EnviaImgPdfScieloPadrao.log cria \var\www\scielo
 
+Content of the sample file c:\var\www\scielo\proc\tranf\EnviaImgPdfLogOn-exemplo.txt::
+
+    open server
+    user
+    password
+
+    cd www
+    prompt
+    bin
+
 ============================================
 Configuring EnviaTranslationScieloPadrao.bat
 ============================================
 
+This procedure is basically a processing that send some files to the official server through an FTP account.
+
+Fix the path according to the SciELO Site directory, for the lines below:: 
+
+    notepad \scielo\serial\translation.lst
+    ***
+    EnviaTranslationScielo.bat \scielo transf\EnviaTranslationLogOn.txt log\EnviaTranslationScieloPadrao.log cria \scielo\web\bases
 
 
+.. code-block:: text
+
+    EnviaImgPdfScielo.bat <path_data> <ftp_conf_file> <log_file> cria <path_webscielo>
+
+where
+   
+    <path_data>:    path which contains serial folder. e. g.: \\scielo
+
+    <ftp_conf_file>: path for the ftp credential file
+
+    <path_website>: path which contains the website application. e. g.: \\scielo\\web
+
+    <log_file>:     path/name for the log file. e. g.: log\\2012-03-20.log
+
+considering the path \\var\\www\\scielo the changes must be:
+
+.. code-block:: text
+
+    GeraScielo \var\www\scielo transf\EnviaTranslationLogOn.txt log\EnviaTranslationLogOn.log cria \var\www\scielo\bases
+
+.. warning:: 
+
+    There is a sample file for the ftp credentials at c:\var\www\scielo\proc\trans directory. You just need to copy the sample file and change the ftp account credentials.
+
+Content of the sample file c:\var\www\scielo\proc\tranf\EnviaTranslationLogOn-exemplo.txt::
+
+    open server
+    user
+    password
+
+    cd www
+    prompt
+    bin
+
+======================================
+Configuring EnviaBasesScieloPadrao.bat
+======================================
+
+This procedure is basically a processing that send some files to the SciELO for bibliometric and access statistics processing.
+
+Fix the path according to the SciELO Site directory, for the lines below:: 
+
+    notepad \scielo\serial\translation.lst
+    ***
+    EnviaBasesScielo.bat \scielo transf\EnviaBasesLogOn.txt log\EnviaBasesScieloPadrao.log cria 
 
 
+.. code-block:: text
 
-EnviaTranslationScieloPadrao.bat
---------------------------------
+    EnviaImgPdfScielo.bat <path_data> <ftp_conf_file> <log_file> cria
 
-It is a shortcut to EnviaTranslationScielo.bat
+where
+   
+    <path_data>:    path which contains serial folder. e. g.: \\scielo
 
-Parameters:
-    - Parameter 1: path to production area which contains serial folder 
-    - Parameter 2: FTP logon file
-    - Parameter 3: logfile (log)
-    - Parameter 4: cria or add (cria for new log file content or add for appended log file content) 
-    - Parameter 5: path of htdocs, which contains img folder
+    <ftp_conf_file>: path for the ftp credential file
 
-Example:
+    <log_file>:     path/name for the log file. e. g.: log\\2012-03-20.log
 
-    .. code-block::text
+considering the path \\var\\www\\scielo the changes must be:
 
-        EnviaTranslationSciELO.bat \var\www\scielo transf\EnviaTranslationSciELOLogOn.txt log\20011002.log cria \var\www\scielo\htdocs
+.. code-block:: text
+
+    EnviaBasesScielo \var\www\scielo transf\EnviaBasesLogOn.txt log\EnviaBasesScieloPadrao.log cria \var\www\scielo\bases
+
+.. warning:: 
+
+    There is a sample file for the ftp credentials at c:\var\www\scielo\proc\trans directory. You just need to copy the sample file and change the ftp account credentials.
+
+Content of the sample file c:\var\www\scielo\proc\tranf\EnviaBasesScieloPadrao-exemplo.txt::
+
+    open servidor
+    user
+    password
+
+    prompt
+    cd /usr/local/scielo/scielo-prod
+    mkdir serial
+    cd serial
+    ascii
+    put temp\scilista-envia.lst scilista.lst
+    bin
 
 
+=====
+Notes
+=====
 
-Configuration for EnviaBasesScieloPadrao.bat
-============================================
+In some situations the Windows builtin FTP presents timeout problems when conecting to FTP servers. If this happens, we recomend to install a third party FTP client like cygwin. When using cygwin FTP client, some chages must be done in the ftp credential files, as following. 
 
-EnviaBasesLogOn.txt 
--------------------
 
-Template: EnviaBasesLogOn-exemplo.txt
+Templates: 
+
+* EnviaBasesLogOn.txt
+* EnviaTranslationLogOn.txt
+* EnviaImgPdfLogOn.txt
 
 It depends on what is used to do the transference: ftp or cygwin\lftp.
 
-Check the Envia*Scielo.bat.
+Check the Envia*Scielo.bat files and look for the FTP command line to identify or change the client FTP.
 
+**Builtin FTP Client**
 
     .. code-block:: text
 
         ftp -s:temp\Envia...
 
-Or
-    .. code-block:: text
+FTP credential files must follow this patterns.
 
-        cgywin\lftp\lftp.exe -f temp\Envia...
-
-
-Using ftp command
-`````````````````
     .. code-block:: text
 
         open <SERVER_ADDRESS_OR_NAME>
@@ -138,8 +216,14 @@ Using ftp command
         put temp\scilista-envia.lst -o scilista.lst
         bin
 
-Using cgywin\lftp package
-`````````````````````````
+**CGYWIN FTP Client**
+
+    .. code-block:: text
+
+        cgywin\lftp\lftp.exe -f temp\Envia...
+
+FTP credential files must follow this patterns.
+
     .. code-block:: text
 
         open <USER>:<PASSWORD>@<SERVER_ADDRESS_OR_NAME>
@@ -148,22 +232,3 @@ Using cgywin\lftp package
         ascii
         put temp\scilista-envia.lst -o scilista.lst
         bin
-
-EnviaBasesScieloPadrao.bat
---------------------------
-
-EnviaBasesScieloPadrao.bat is a shortcut to EnviaBasesScielo.bat.
-
-EnviaBasesSciELOPadrao.bat, with the following parameter:
-    - Parameter 1: path to production area
-    - Parameter 2: FTP logfile (see the file mentioned above)
-    - Parameter 3: logfile (log)
-    - Parameter 4: cria (optional)  
-
-Example:
-    
-    .. code-block:: text
-                                   
-        EnviaBasesScielo.bat \var\www\scielo transf\EnviaBasesLogOn.txt log\20011002.log cria
-
-
