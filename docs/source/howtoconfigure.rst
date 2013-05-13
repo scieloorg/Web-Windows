@@ -1,6 +1,10 @@
-==========================
-Configuring GeraPadrao.bat
-==========================
+=========================
+Configuring Batch Scripts
+=========================
+
+--------------
+GeraPadrao.bat
+--------------
 
 Edit c:\\var\\www\\scielo\\proc\\GeraPadrao.bat
 
@@ -41,9 +45,9 @@ considering the path \\var\\www\\scielo the changes must be:
     GeraScielo \var\www\scielo \var\www\scielo log\GeraPadrao.log adiciona
 
 
-=======================================
+---------------------------------------
 Configuring EnviaImgPdfScieloPadrao.bat
-=======================================
+---------------------------------------
 
 This procedure is basically a processing that send some files to the official server through an FTP account.
 
@@ -83,9 +87,9 @@ Content of the sample file c:\var\www\scielo\proc\tranf\EnviaImgPdfLogOn-exemplo
     prompt
     bin
 
-============================================
+--------------------------------------------
 Configuring EnviaTranslationScieloPadrao.bat
-============================================
+--------------------------------------------
 
 This procedure is basically a processing that send some files to the official server through an FTP account.
 
@@ -130,9 +134,9 @@ Content of the sample file c:\var\www\scielo\proc\tranf\EnviaTranslationLogOn-ex
     prompt
     bin
 
-======================================
+--------------------------------------
 Configuring EnviaBasesScieloPadrao.bat
-======================================
+--------------------------------------
 
 This procedure is basically a processing that send some files to the SciELO for bibliometric and access statistics processing.
 
@@ -179,13 +183,11 @@ Content of the sample file c:\var\www\scielo\proc\tranf\EnviaBasesScieloPadrao-e
     put temp\scilista-envia.lst scilista.lst
     bin
 
-
-=====
+-----
 Notes
-=====
+-----
 
 In some situations the Windows builtin FTP presents timeout problems when conecting to FTP servers. If this happens, we recomend to install a third party FTP client like cygwin. When using cygwin FTP client, some chages must be done in the ftp credential files, as following. 
-
 
 Templates: 
 
