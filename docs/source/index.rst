@@ -12,7 +12,7 @@ The focus of this Guide is to guide the IT managers to intall the following task
 
 #. PC-Programs (Converter and Markup) http://docs.scielo.org/projects/scielo-pc-programs/en/latest/
 #. Delorean2Isis (Import databases from the Journal Manager to the conversion process) https://github.com/scieloorg/delorean2isis
-#. Staging SciELO Website (Just for articles check) http://docs.scielo.org/projects/scielo-site-windows/en/latest/howtoinstall_scielowebwin.html
+#. Staging SciELO Website on Windows (Just for articles check)
 #. GeraPadrao (Processing of new data to publish the new data in the website)
 #. EnviaPDFSciELOPadrao (Send PDF files to the official website)
 #. EnviaTranslationSciELOPadrao (Send Translation files to the official website)
