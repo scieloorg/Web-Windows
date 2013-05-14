@@ -121,5 +121,5 @@ Execute the next steps, only if the local website is working properly.
 
 Check if the errors are about content, which must be fixed, using SciELO PC Programs.
 
-Check if the errors are about the website application or processing.
+Check if the errors are about processing.
 
