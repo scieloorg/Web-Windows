@@ -41,7 +41,7 @@ call batch\OrdenaMaster.bat ..\bases-work\title\title 150 pft\OrdTitle.pft
 call batch\GeraInvertido.bat ..\bases-work\title\title fst\title.fst ..\bases-work\title\title
 call batch\GeraInvertido.bat ..\bases-work\title\title fst\serarea.fst ..\bases-work\title\serarea
 
-call geraSubjectList.bat
+rem call geraSubjectList.bat
 
 call batch\GeraInvertido.bat ..\bases-work\title\title fst\titsrc.fst ..\bases-work\title\titsrc
 call batch\GeraInvertido.bat ..\bases-work\title\title fst\titsrcp.fst ..\bases-work\title\titsrcp
