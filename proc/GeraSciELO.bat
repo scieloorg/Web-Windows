@@ -39,7 +39,7 @@ rem call batch\CopiaDiretorio.bat %1\code %1\serial\code
 call batch\GeraNewcodeAux.bat %1\serial temp\
 call batch\OrdenaMaster.bat ..\bases-work\title\title 150 pft\OrdTitle.pft
 call batch\GeraInvertido.bat ..\bases-work\title\title fst\title.fst ..\bases-work\title\title
-call batch\GeraInvertido.bat ..\bases-work\title\title fst\serarea.fst ..\bases-work\title\serarea
+rem call batch\GeraInvertido.bat ..\bases-work\title\title fst\serarea.fst ..\bases-work\title\serarea
 
 rem call geraSubjectList.bat
 
