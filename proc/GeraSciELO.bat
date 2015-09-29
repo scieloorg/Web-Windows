@@ -32,9 +32,7 @@ call batch\VerifExistemBases.bat %1
 
 call batch\CriaDiretorio.bat ..\bases-work\title
 call batch\GeraNovasDatas.bat %2\bases\title\title scilista.lst temp\NovasDatas
-call batch\GeraMaster.bat %1\serial\title\title ..\bases-work\title\title prc\GeraDatas.prc
-
-call batch\GeraMaster.bat ..\bases-work\title\title ..\bases-work\title\title prc\current.prc
+call batch\GeraMaster.bat %1\serial\title\title ..\bases-work\title\title prc\FilterAndGeraDatas.prc
 
 rem call batch\CopiaDiretorio.bat %1\code %1\serial\code
 
