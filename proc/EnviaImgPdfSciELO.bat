@@ -29,7 +29,7 @@ call batch\CopiaArquivo.bat %1\serial\scilista.lst temp\scilista-imgpdf.lst
 
 call batch\ImgPdfCriaDir.bat %5
 
-if "@%6" == "@NO_FTP" then goto DO_COPY
+if "@%6" == "@NO_FTP" goto DO_COPY
 
 
 :DO_FTP
@@ -44,8 +44,8 @@ call batch\InformaLog.bat %0 x FTP das Imagens e Pdfs
 ftp -s:temp\EnviaImgPdf.txt >> %INFORMALOG%
 if errorlevel==1 batch\AchouErro.bat %0 ftp: temp\EnviaImgPdf.txt
 
-if "@%6" == "@ONLY_FTP" then goto END
-if "@%6" == "@" then goto END
+if "@%6" == "@ONLY_FTP" goto END
+if "@%6" == "@" goto END
 
 :DO_COPY
 %CISIS_DIR%\mx "seq=temp\scilista-imgpdf.lst " lw=9000 pft=@pft\EnviaImgPdfSemFTP.pft now >> temp\EnviaImgPdf.txt
