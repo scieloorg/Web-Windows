@@ -45,192 +45,86 @@ considering the path \\var\\www\\scielo the changes must be:
     GeraScielo \var\www\scielo \var\www\scielo log\GeraPadrao.log adiciona
 
 
----------------------------------------
-Configuring EnviaImgPdfScieloPadrao.bat
----------------------------------------
+--------
+PaperBoy
+--------
 
-This procedure is basically a processing that send some files to the official server through an FTP account.
+Paper boy is a Python utilitary developed to replace the scripts:
 
-Fix the path according to the SciELO Site directory, for the lines below:: 
+    * EnviaImgPdfScieloPadrao.bat
+    * EnviaTranslationSciELOPadrao.bat
+    * EnviaBasesScieloPadrao.bat
+    * EnviaXmlScieloPadrao.bat
 
-    notepad \scielo\serial\scilista.lst
-    ***
-    EnviaImgPdfScielo.bat \scielo transf\EnviaImgPdfLogOn.txt log\EnviaImgPdfScieloPadrao.log cria \scielo\web
+This utilitary was developed to address ftp incompatibilities with windows and
+Linux servers.
 
-.. code-block:: text
+Installing
+----------
 
-    EnviaImgPdfScielo.bat <path_data> <ftp_conf_file> <log_file> cria <path_webscielo>
+Install guide: https://github.com/scieloorg/paperboy
 
-where
-   
-    <path_data>:    path which contains serial folder. e. g.: \\scielo
 
-    <ftp_conf_file>: path for the ftp credential file
+Configuring
+-----------
 
-    <path_website>: path which contains the website application. e. g.: \\scielo\\web
+After install the paperboy you must create a config.ini file to configure the
+source and destiny resources, and the ssh account that will be used to send data
+to the server.
 
-    <log_file>:     path/name for the log file. e. g.: log\\2012-03-20.log
+Access the directory \\var\\www\\scielo\\proc
 
-considering the path \\var\\www\\scielo the changes must be:
+Creating config.ini file
+````````````````````````
 
-.. code-block:: text
-
-    GeraScielo \var\www\scielo transf\EnviaImgPdfLogOn.txt log\EnviaImgPdfScieloPadrao.log cria \var\www\scielo
-
-Content of the sample file c:\var\www\scielo\proc\tranf\EnviaImgPdfLogOn-exemplo.txt::
-
-    open server
-    user
-    password
-
-    cd www
-    prompt
-    bin
-
---------------------------------------------
-Configuring EnviaTranslationScieloPadrao.bat
---------------------------------------------
-
-This procedure is basically a processing that send some files to the official server through an FTP account.
-
-Fix the path according to the SciELO Site directory, for the lines below:: 
-
-    notepad \scielo\serial\translation.lst
-    ***
-    EnviaTranslationScielo.bat \scielo transf\EnviaTranslationLogOn.txt log\EnviaTranslationScieloPadrao.log cria \scielo\web\bases
-
+Create a text file named paperboy_config.ini in the **proc** directory, the file
+must follow the bellow format:
 
 .. code-block:: text
 
-    EnviaImgPdfScielo.bat <path_data> <ftp_conf_file> <log_file> cria <path_webscielo>
+    [app:main]
+    source_dir=c:/var/www/scielo
+    cisis_dir=c:/var/www/scielo/proc/cisis
+    scilista=c:/var/www/scielo/serial/scilista.lst
+    destiny_dir=/var/www/scielo
+    ssh_server=localhost
+    ssh_port=22
+    ssh_user=anonymous
+    ssh_password=anonymous
 
-where
-   
-    <path_data>:    path which contains serial folder. e. g.: \\scielo
+**source_dir:** Absolute path to the directory where the SciELO Local website was installed.
 
-    <ftp_conf_file>: path for the ftp credential file
+**cisis_dir:** Absolute path to the directory where CISIS utilitary was installed
 
-    <path_website>: path which contains the website application. e. g.: \\scielo\\web
+**scilista:** Absolute path to the scilista file with the list of issues that should be
+add, updated or deleted from the website
 
-    <log_file>:     path/name for the log file. e. g.: log\\2012-03-20.log
+**destiny_dir:** Absolute path to the directory where the SciELO Site was installed in the server.
 
-considering the path \\var\\www\\scielo the changes must be:
+**ssh_server:** Domain of the server where the SciELO Site was installed
 
-.. code-block:: text
+**ssh_port:** The SSH port (default 22)
 
-    GeraScielo \var\www\scielo transf\EnviaTranslationLogOn.txt log\EnviaTranslationLogOn.log cria \var\www\scielo\bases
+**ssh_user:** A valid SSH username 
 
-.. warning:: 
+**ssh_password:** A valid SSH password for the given username
 
-    There is a sample file for the ftp credentials at c:\var\www\scielo\proc\trans directory. You just need to copy the sample file and change the ftp account credentials.
+Creating envia.bat file
+```````````````````````
 
-Content of the sample file c:\var\www\scielo\proc\tranf\EnviaTranslationLogOn-exemplo.txt::
-
-    open server
-    user
-    password
-
-    cd www
-    prompt
-    bin
-
---------------------------------------
-Configuring EnviaBasesScieloPadrao.bat
---------------------------------------
-
-This procedure is basically a processing that send some files to the SciELO for bibliometric and access statistics processing.
-
-Fix the path according to the SciELO Site directory, for the lines below:: 
-
-    notepad \scielo\serial\translation.lst
-    ***
-    EnviaBasesScielo.bat \scielo transf\EnviaBasesLogOn.txt log\EnviaBasesScieloPadrao.log cria 
-
+Create a text file named paperboy_envia.bat in the **proc** directory.
 
 .. code-block:: text
 
-    EnviaImgPdfScielo.bat <path_data> <ftp_conf_file> <log_file> cria
+    set PAPERBOY_SETTINGS_FILE=/var/www/scielo/proc/paperboy_config.ini
+    paperboy -m -o /var/www/scielo/proc/log/paperboy_envia.log
 
-where
-   
-    <path_data>:    path which contains serial folder. e. g.: \\scielo
+Running
+-------
 
-    <ftp_conf_file>: path for the ftp credential file
-
-    <log_file>:     path/name for the log file. e. g.: log\\2012-03-20.log
-
-considering the path \\var\\www\\scielo the changes must be:
+Run the script **paperboy_envia.bat** to update the SciELO Site server.
 
 .. code-block:: text
 
-    EnviaBasesScielo \var\www\scielo transf\EnviaBasesLogOn.txt log\EnviaBasesScieloPadrao.log cria \var\www\scielo\bases
+    paperboy_envia.bat
 
-.. warning:: 
-
-    There is a sample file for the ftp credentials at c:\var\www\scielo\proc\trans directory. You just need to copy the sample file and change the ftp account credentials.
-
-Content of the sample file c:\var\www\scielo\proc\tranf\EnviaBasesScieloPadrao-exemplo.txt::
-
-    open servidor
-    user
-    password
-
-    prompt
-    cd /usr/local/scielo/scielo-prod
-    mkdir serial
-    cd serial
-    ascii
-    put temp\scilista-envia.lst scilista.lst
-    bin
-
------
-Notes
------
-
-In some situations the Windows builtin FTP presents timeout problems when conecting to FTP servers. If this happens, we recomend to install a third party FTP client like cygwin. When using cygwin FTP client, some chages must be done in the ftp credential files, as following. 
-
-Templates: 
-
-* EnviaBasesLogOn.txt
-* EnviaTranslationLogOn.txt
-* EnviaImgPdfLogOn.txt
-
-It depends on what is used to do the transference: ftp or cygwin\lftp.
-
-Check the Envia*Scielo.bat files and look for the FTP command line to identify or change the client FTP.
-
-**Builtin FTP Client**
-
-    .. code-block:: text
-
-        ftp -s:temp\Envia...
-
-FTP credential files must follow this patterns.
-
-    .. code-block:: text
-
-        open <SERVER_ADDRESS_OR_NAME>
-        <USER>
-        <PASSWORD>
-        prompt
-        cd <SERIAL_PATH>
-        ascii
-        put temp\scilista-envia.lst -o scilista.lst
-        bin
-
-**CGYWIN FTP Client**
-
-    .. code-block:: text
-
-        cgywin\lftp\lftp.exe -f temp\Envia...
-
-FTP credential files must follow this patterns.
-
-    .. code-block:: text
-
-        open <USER>:<PASSWORD>@<SERVER_ADDRESS_OR_NAME>
-        prompt
-        cd serial
-        ascii
-        put temp\scilista-envia.lst -o scilista.lst
-        bin
