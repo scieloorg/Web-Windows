@@ -45,11 +45,13 @@ considering the path \\var\\www\\scielo the changes must be:
     GeraScielo \var\www\scielo \var\www\scielo log\GeraPadrao.log adiciona
 
 
+.. _paperboy_config:
+
 --------
 PaperBoy
 --------
 
-Paper boy is a Python utilitary developed to replace the scripts:
+Paperboy is a Python utilitary developed to replace the scripts:
 
     * EnviaImgPdfScieloPadrao.bat
     * EnviaTranslationSciELOPadrao.bat

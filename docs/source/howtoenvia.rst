@@ -7,19 +7,25 @@ Introduction
 
 The next step after checking the local website is to transfer the databases and files to the processing server.
 
+
+Pre-requirements
+================
+
+* :ref:`paperboy_config`
+
 Conventions
 ===========
 
 In the local server, all the examples in this topic show the directory structure for the standard 
 installation of the SciELO website: 
 
-* \\scielo\\serial (*) 
-
-* \\scielo\\web\\bases 
-* \\scielo\\web\\bases-work 
-* \\scielo\\web\\cgi-bin 
-* \\scielo\\web\\htdocs 
-* \\scielo\\web\\proc 
+* /var/www/scielo/serial (*) 
+* /var/www/scielo/bases 
+* /var/www/scielo/bases-work 
+* /var/www/scielo/cgi-bin 
+* /var/www/scielo/htdocs 
+* /var/www/scielo/proc
+* /var/www/scielo/serial
 
 (*) data structure required for `SciELO PC Programs </projects/scielo-pc-programs/en/latest/>`_.  
 
@@ -42,24 +48,22 @@ Checking scilista.lst
 
 Checking databases in serial
 ----------------------------
-#. database of the articles, created by Converter, must be in: \\scielo\\serial\\<acronym>\\v*n*\base
-#. title and issue databases must be in: \\scielo\\serial\\title and \\scielo\\serial\\issue, respectively.
+#. database of the articles, created by Converter, must be in: /scielo/serial/<acronym>/v*n*\base
+#. title and issue databases must be in: /scielo/serial/title and /scielo/serial/issue, respectively.
 
 
 Checking images, translations and PDF files
 -------------------------------------------
 
-#. Check the existence of images of the journals: plogo.gif and glogo.gif in \\scielo\\web\\htdocs\\img\\revistas\\<acronym>\\
+#. Check the existence of images of the journals: plogo.gif and glogo.gif in /scielo/web/htdocs/img/revistas/<acronym>/
 
-#. Check the existence of secondary pages: \*.htm in \\scielo\\web\\htdocs\\revistas\\<acronym>\\
+#. Check the existence of secondary pages: \*.htm in /scielo/web/htdocs/revistas/<acronym>/
 
-#. Check the existence of images of the articles in \\scielo\\web\\htdocs\\img\\revistas\\<acronym>\\<vol-num>\\
+#. Check the existence of images of the articles in /scielo/web/htdocs/img/revistas/<acronym>/<vol-num>/
 
-#. Check the existence of PDF files of the articles in \\scielo\\web\\bases\\pdf\\<acronym>\\<vol-num>\\
+#. Check the existence of PDF files of the articles in /scielo/web/bases/pdf/<acronym>/<vol-num>/
 
-#. Check the existence of the translation files of the articles in \\scielo\\web\\bases\\translation\\<acronym>\\<vol-num>\\
-
-
+#. Check the existence of the translation files of the articles in /scielo/web/bases/translation/<acronym>/<vol-num>/
 
 
 Transfering files to the processing server
@@ -69,51 +73,24 @@ Transfering databases
 ---------------------
 This procedure sends the databases from local server to the processing server by FTP.
 
-From \\scielo\\web\\proc, run EnviaBasesScieloPadrao.bat, which must be previously configured. 
+From /scielo/web/proc, run EnviaBasesScieloPadrao.bat, which must be previously configured. 
 
     .. code-block:: text
 
         EnviaBasesSciELOPadrao.bat 
 
 
-Transfering img and pdf
------------------------
+Transfering files
+-----------------
 
-This procedure transfers by FTP, from the local server to the homologation server, the images and pdfs of the articles of the journal issues listed in scilista.txt file. 
-
-This procedure makes available images and pdfs. It is not related to the generation of the website.
-
-But if the images and pdf files are missing at the website, probably something went wrong at this step.
+This procedure transfers by SSH, from the local server to the homologation server, the images, pdfs, translations, xml's of the articles of the journal issues listed in scilista.txt file. 
 
     .. code-block:: text
 
-        EnviaImgPdfSciELOPadrao.bat 
+        paperboy_envia.bat 
 
 
-Transfering translations files
-------------------------------
-
-This procedure transfers by FTP, from the local server to the homologation server, the translation files of the articles of the journal issues listed in scilista.txt file. 
-
-This procedure makes available HTML of translations files. It is not related to the generation of the website.
-
-But if the translations files are missing at the website, probably something went wrong at this step.
-
-    .. code-block:: text
-
-        EnviaTranslationSciELOPadrao.bat 
-
-
-
-Checking the result and log file
-================================
-
-Processing output is displayed on the screen (standard output) and is stored in the log file: \\scielo\\web\\log\\Envia*Padrao.log or the file informed in Envia*Padrao.
-
-In case of error, processing stops, and wait for an user's intervention.
- 
-Example: 
-    Cancel or Continue 
+Processing output is displayed on the screen (standard output) and is stored in the log file: /scielo/web/log/paperboy_enviao.log.
 
 After processing is completed, it is recommendable to check the log file.
 
@@ -134,7 +111,3 @@ Images, HTML and PDF files:
 
 Translation files:
     - /var/www/scielo/bases/translation/<acronym>/<issue_id>/<html_files>
-
-    
-
-

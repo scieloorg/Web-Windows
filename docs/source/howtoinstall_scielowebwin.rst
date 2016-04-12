@@ -22,12 +22,12 @@ REQUIREMENTS
         - short-open-tag = On
         - PHP must be working above de desired domain and directory.
             - sugested domain: scielo.local
-            - sugested diretory: c:\\var\\www\scielo\\htdocs
+            - sugested diretory: c:/var/www/scielo/htdocs
 
 Checking the info.php above the desired domain
 ==============================================
 
-Save the following code into c:\\var\\www\\scielo\\htdocs\\info.php file.
+Save the following code into c:/var/www/scielo/htdocs/info.php file.
 
 .. code-block:: text
 
@@ -99,9 +99,9 @@ Install SciELO Site
 
         .. code-block:: text
 
-            c:\> md \var\www\scielo
-            c:\> cd \var\www\scielo
-            c:\var\www\scielo>
+            c:\> md /var/www/scielo
+            c:\> cd /var/www/scielo
+            c:/var/www/scielo>
 
     2. Downloading packages from GitHub
 
@@ -109,27 +109,27 @@ Install SciELO Site
         
         Link of versions available for Windows Patch: https://github.com/scieloorg/Web-Windows/tags
 
-    3. Firts, extract the SciELO Site package at c:\\var\\www\\scielo>
+    3. Firts, extract the SciELO Site package at c:/var/www/scielo>
 
-        The created directory structure at c:\\var\\www\\scielo> must be 
+        The created directory structure at c:/var/www/scielo> must be 
 
         .. code-block:: text
 
-            <package_name>\bases\
-            <package_name>\bases-work_modelo\
-            <package_name>\bases_modelo\
-            <package_name>\cgi-bin\
-            <package_name>\docs\
-            <package_name>\htdocs\
-            <package_name>\ignore.txt
-            <package_name>\proc\
-            <package_name>\serial_modelo\
+            <package_name>/bases/
+            <package_name>/bases-work_modelo/
+            <package_name>/bases_modelo/
+            <package_name>/cgi-bin/
+            <package_name>/docs/
+            <package_name>/htdocs/
+            <package_name>/ignore.txt
+            <package_name>/proc/
+            <package_name>/serial_modelo/
 
-        Move all the content from <package_name> to c:\\var\\www\\scielo>
+        Move all the content from <package_name> to c:/var/www/scielo>
 
         Remove the empty directory <package_name>
 
-    4. Then, extract the SciELO Windows package at c:\\var\\www\\scielo>.
+    4. Then, extract the SciELO Windows package at c:/var/www/scielo>.
 
     .. warning::
     
@@ -147,9 +147,9 @@ Install SciELO Site
 
     7. Install the CISIS tool at the SciELO Site directories
 
-        Download the `CISIS package <http://wiki.bireme.org/en/index.php/CISIS>`_ from the BIREME products website and extract it at c:\\var\\www\\scielo\\proc\\cisis>.
+        Download the `CISIS package <http://wiki.bireme.org/en/index.php/CISIS>`_ from the BIREME products website and extract it at c:/var/www/scielo/proc/cisis>.
 
-        The recommended version is **CISIS 1030**
+        The recommended version is **CISIS 1660**
 
         To check the CISIS version, after unzip the donwloaded file at c:\\var\\www\\scielo\\proc\\cisis>, run: 
 
@@ -161,15 +161,15 @@ Install SciELO Site
 
         .. code-block:: text
 
-            CISIS Interface v5.2b/GC/W/L/M/32767/10/30/I - Utility MX
+            CISIS Interface v5.2b/GC/W/L/M/32767/16/60/I - Utility MX
             CISIS Interface v5.2b/.iy0/Z/4GB/GIZ/DEC/ISI/UTL/INVX/B7/FAT/CIP/CGI/MX/W
             Copyright (c)BIREME/PAHO 2006. [!http://www.bireme.br/products/cisis]
 
     8. Install the WWWISIS tool at the SciELO Site directories
 
-        Download the `WWWISIS package <http://wiki.bireme.org/en/index.php/WWWISIS>`_ from the BIREME products website and extract it at c:\\var\\www\\scielo\\cgi-bin>.
+        Download the `WWWISIS package <http://wiki.bireme.org/en/index.php/WWWISIS>`_ from the BIREME products website and extract it at c:/var/www/scielo/cgi-bin>.
 
-        The recommended version is **WWWISIS 1030**
+        The recommended version is **WWWISIS 1660**
 
         To check the WWWISIS version, at c:\var\www\scielo\cgi-bin\, run:
 
@@ -189,7 +189,7 @@ Install SciELO Site
 
         .. code-block:: text
         
-            CISIS Interface v5.4.02_p5/GC/512G/W/L4/M/32767/10/30/I - XML !IsisScript WWWISIS 7.1d
+            CISIS Interface v5.4.02_p5/GC/512G/W/L4/M/32767/16/60/I - XML !IsisScript WWWISIS 7.1d
             CISIS Interface v5.4.02_p5/.iy0/Z/GIZ/DEC/ISI/UTL/INVX/B7/FAT/CIP/CGI/MX/W
             Copyright (c)BIREME/PAHO 2008. [!http://www.bireme.br/products/cisis]
             Copyright (c)BIREME/PAHO 2008. [!http://bvsmodelo.bvsalud.org/php/index.php?lang=pt]
@@ -203,7 +203,7 @@ Configuration of scielo.def.php
 
     1. Creating scielo.def.php
 
-        In C:\\var\\www\\scielo\\htdocs> there is a file named as scielo.def.php.template. 
+        In C:/var/www/scielo/htdocs> there is a file named as scielo.def.php.template. 
 
         .. image:: img/en/scielo028.png
 

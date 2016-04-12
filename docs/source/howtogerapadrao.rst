@@ -14,24 +14,23 @@ Conventions
 All the examples in this topic show the directory structure for the standard 
 installation of the SciELO website: 
 
-* \\var\\www\\scielo\\serial (*) 
-
-* \\var\\www\\scielo\\bases 
-* \\var\\www\\scielo\\bases-work 
-* \\var\\www\\scielo\\cgi-bin 
-* \\var\\www\\scielo\\htdocs 
-* \\var\\www\\scielo\\proc 
+* /var/www/scielo/serial (*) 
+* /var/www/scielo/bases 
+* /var/www/scielo/bases-work 
+* /var/www/scielo/cgi-bin 
+* /var/www/scielo/htdocs 
+* /var/www/scielo/proc 
 
 (*) data structure required for `SciELO PC Programs </projects/scielo-pc-programs/en/latest/>`_.  
 
 Requirements
 ============
 
-#. images of the articles must be in: \\var\\www\\scielo\\htdocs\\img\\revistas\\<acronym>\\v*n*
-#. pdf files of the articles must be in: \\var\\www\\scielo\\bases\\pdf\\<acronym>\\v*n*
-#. translations files of the articles must be in: \\var\\www\\scielo\\bases\\translations\\<acronym>\\v*n*
-#. database of the articles, created by Converter, must be in: \\var\\www\\scielo\\serial\\<acronym>\\v*n*\base
-#. title and issue database must be in: \\scielo\\serial\\title and \\var\\www\\scielo\\serial\\issue, respectively.
+#. images of the articles must be in: /var/www/scielo/htdocs/img/revistas/<acronym>/v*n*
+#. pdf files of the articles must be in: /var/www/scielo/bases/pdf/<acronym>/v*n*
+#. translations files of the articles must be in: /var/www/scielo/bases/translations/<acronym>/v*n*
+#. database of the articles, created by Converter, must be in: /var/www/scielo/serial/<acronym>/v*n*\base
+#. title and issue database must be in: /scielo/serial/title and /var/www/scielo/serial/issue, respectively.
 
 
 GeraPadrao.bat
@@ -69,7 +68,7 @@ GeraPadrao.bat
 #. Answer: continue or cancel
 
 
-#. If continue, edit \\var\\www\\scielo\\serial\\scilista.txt with the following format: 
+#. If continue, edit /var/www/scielo/serial/scilista.txt with the following format: 
 
     .. code-block:: text
         
@@ -102,7 +101,7 @@ Example:
 Checking the result and log file
 ================================
 
-Processing output is displayed on the screen (standard output) and is stored in the log file: \\var\\www\\scielo\\log\\GeraPadrao.log or the file informed in GeraPadrao.
+Processing output is displayed on the screen (standard output) and is stored in the log file: /var/www/scielo/log/GeraPadrao.log or the file informed in GeraPadrao.
 
 In case of error, processing stops, and wait for an user's intervention.
  
