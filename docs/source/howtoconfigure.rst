@@ -242,6 +242,4 @@ Run the script **sincroniza.bat** to update the SciELO Site server.
 Notes
 -----
 
-* Maybe you want to include a link for the sincroniza.bat file in a appropriate 
-place, avoiding the uses to know it is available in c:/deloreans2isis.
-For exemple: Include a link in the desktop.
+* Maybe you want to include a link for the sincroniza.bat file in a appropriate place, avoiding the uses to know it is available in c:/deloreans2isis. For exemple: Include a link in the desktop.
