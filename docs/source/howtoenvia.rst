@@ -48,6 +48,7 @@ Checking scilista.lst
 
 Checking databases in serial
 ----------------------------
+
 #. database of the articles, created by Converter, must be in: /scielo/serial/<acronym>/v*n*\base
 #. title and issue databases must be in: /scielo/serial/title and /scielo/serial/issue, respectively.
 
@@ -56,13 +57,9 @@ Checking images, translations and PDF files
 -------------------------------------------
 
 #. Check the existence of images of the journals: plogo.gif and glogo.gif in /scielo/web/htdocs/img/revistas/<acronym>/
-
 #. Check the existence of secondary pages: \*.htm in /scielo/web/htdocs/revistas/<acronym>/
-
 #. Check the existence of images of the articles in /scielo/web/htdocs/img/revistas/<acronym>/<vol-num>/
-
 #. Check the existence of PDF files of the articles in /scielo/web/bases/pdf/<acronym>/<vol-num>/
-
 #. Check the existence of the translation files of the articles in /scielo/web/bases/translation/<acronym>/<vol-num>/
 
 
@@ -71,6 +68,7 @@ Transfering files to the processing server
 
 Transfering databases
 ---------------------
+
 This procedure sends the databases from local server to the processing server by FTP.
 
 From /scielo/web/proc, run EnviaBasesScieloPadrao.bat, which must be previously configured. 
@@ -83,7 +81,7 @@ From /scielo/web/proc, run EnviaBasesScieloPadrao.bat, which must be previously 
 Transfering files
 -----------------
 
-This procedure transfers by SSH, from the local server to the homologation server, the images, pdfs, translations, xml's of the articles of the journal issues listed in scilista.txt file. 
+This procedure transfers by SSH or FTP, from the local server to the homologation server, the images, pdfs, translations, xml's of the articles of the journal issues listed in scilista.txt file. 
 
     .. code-block:: text
 

@@ -103,13 +103,13 @@ add, updated or deleted from the website
 
 **destiny_dir:** Absolute path to the directory where the SciELO Site was installed in the server.
 
-**ssh_server:** Domain of the server where the SciELO Site was installed
+**ssh_server:** Domain of the SFTP or FTP server, where the SciELO Site was installed
 
-**ssh_port:** The SSH port (default 22)
+**ssh_port:** 22 to use SFTP or 21 to use FTP.
 
-**ssh_user:** A valid SSH username 
+**ssh_user:** A valid SFTP or FTP username 
 
-**ssh_password:** A valid SSH password for the given username
+**ssh_password:** A valid SFTP or FTP password for the given username
 
 Creating envia.bat file
 ```````````````````````
@@ -130,3 +130,118 @@ Run the script **paperboy_envia.bat** to update the SciELO Site server.
 
     paperboy_envia.bat
 
+-------------
+Delorean2Isis
+-------------
+
+This script is used to download the SciELO databases managed in the SciELO Manager
+to the local website for covertion pourpose. It is necessary when your Collection
+is using the new catalog manager "SciELO Manager".
+
+Installing
+----------
+
+Downloading and unzipping
+`````````````````````````
+Download the package (`delorean2isis-master.zip <http://github.com/scieloorg/delorean2isis/archive/master.zip>`_)
+and unzip it at c:.
+
+Unzip the package in c:/::
+
+    cd /
+    unzip delorean2isis-master.zip
+    rename delorean2isis-master delorean2isis
+
+Installing requirements
+```````````````````````
+
+Python 2.7 must be previously installed
+
+.. code-block:: text
+
+    cd c:/delorean2isis
+    pip install -r requirements.txt
+
+Creating config.py file
+```````````````````````
+
+Create a text file named config.py in the **c:/delorean2isis** directory, the file
+must follow the bellow format:
+
+.. code-block:: text
+
+    #coding:utf-8
+    #!/usr/bin/python
+
+    API_URL = 'http://localhost:8000/api/v1/'
+    API_USER = ''
+    API_KEY = ''
+    DELOREAN_URL = 'http://localhost:6543/generate/'
+    ISIS_PATH = ""
+    DATABASES = ["title", "issue"]
+    DATABASE_FST = {'title': 'tit_issn', 'issue': 'issue'}
+
+You can copy the c:/delorean2isis/config.py.template to c:/delorean2isis/config.py
+to have a fresh and new config.py file.
+
+**API_URL:** URL for the SciELO Manager API (ask it to the SciELO Team).
+
+**API_USER:** Your SciELO Manager username.
+
+**API_KEY:** Your SciELO Manager Token. Login to the SciELO Manager and access the 
+user informations to have your API_KEY. It will be available in the  label "API Token".
+
+**DELOREAN_URL:** URL for the Delorean utilitary (ask it to the SciELO Team).
+
+**ISIS_PATH:** Full path to the ISIS utilitary
+
+**DATABASES:** Databases that will be downloaded. (Do not change this item)
+
+**DATABASES_FST:** Databases that will be downloaded. (Do not change this item)
+
+.. rint::
+
+    Ask the values of the parameters API_URL and DELOREAN_URL for the SciELO Team.
+
+Creating a bash file to run deloreans2isis
+``````````````````````````````````````````
+
+Create a bash file named **sincroniza.bat** in the **c:/delorean2isis**
+directory. This file must contain the following content.
+
+.. code-block:: text
+
+    cd c:/delorean2isis
+    python delorean2isis.py -c <collection_slug> -o c:/var/www/scielo/proc/serial
+
+
+**-c** Collection slug in the SciELO Manager.
+
+**-o** Full path to the SciELO serial folder. If you used the SciELO patterns
+while installing the SciELO Site and SciELO utilitaries, the serial folder should
+be in c:/var/www/scielo/proc/serial.
+
+
+.. hint::
+
+    Ask the collection_slug for the SciELO Team.
+
+
+Running
+-------
+
+
+Run the script **sincroniza.bat** to update the SciELO Site server.
+
+.. code-block:: text
+
+    cd c:/delorean2isis
+    sincroniza.bat
+
+
+Notes
+-----
+
+* Maybe you want to include a link for the sincroniza.bat file in a appropriate 
+place, avoiding the uses to know it is available in c:/deloreans2isis.
+For exemple: Include a link in the desktop.
